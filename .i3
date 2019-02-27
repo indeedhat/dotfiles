@@ -1,0 +1,1 @@
+/home/indeedhat/.i3
