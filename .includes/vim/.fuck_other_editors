@@ -1,0 +1,3 @@
+alias nano="vim"
+alias vi="vim"
+alias svim="sudo vim"
