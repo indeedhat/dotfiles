@@ -1,1 +1,0 @@
-/home/indeedhat/.bashrc
