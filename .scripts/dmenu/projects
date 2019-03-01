@@ -1,0 +1,2 @@
+#!/bin/bash
+"/home/indeedhat/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/183.5429.30/bin/idea.sh"  ~/Documents/Github/$(ls ~/Documents/Github/ | awk -v RS=" " '{print}' | dmenu)

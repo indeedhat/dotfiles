@@ -1,0 +1,2 @@
+alias npmi="npm install --save"
+alias npms="sudo npm i -g"

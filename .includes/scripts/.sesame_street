@@ -1,0 +1,17 @@
+sesame_street() {
+  n=`expr $RANDOM % 20`
+  l=`cat /dev/urandom | tr -dc 'A-Z' | fold -w 1 | head -n 1`
+  w=`shuf -n1  /usr/share/dict/words`
+
+  out=`echo -e " #  \e[2mthis terminal session was brought to you by the letter \e[22m${l}\e[2m, the number \e[22m${n}\e[2m and the word \e[22m${w^}\e[0m  #"`
+  outlen=`echo $out | wc -c`
+  outlen=`expr $outlen - 29`
+
+  pad=" $(seq -s# $outlen |tr -d '[:digit:]')"
+
+  echo -e "\n    $pad"
+  echo -e "    $out"
+  echo -e "    $pad\n"
+}
+#sesame_street
+
