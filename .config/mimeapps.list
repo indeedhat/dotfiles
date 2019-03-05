@@ -1,0 +1,12 @@
+[Added Associations]
+x-scheme-handler/http=exo-web-browser.desktop
+x-scheme-handler/https=exo-web-browser.desktop
+text/plain=mousepad.desktop;
+application/x-shellscript=mousepad.desktop;
+application/zip=xarchiver.desktop;
+application/x-source-rpm=org.mageia.dnfdragora-localinstall.desktop;
+text/markdown=mousepad.desktop;
+
+[Default Applications]
+text/x-arduino=arduino-arduinoide.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop

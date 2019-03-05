@@ -1,0 +1,26 @@
+command=~/.scripts/statusbar/$BLOCK_NAME
+separator_block_width=15
+markup=pango
+
+[ip]
+#command=hostname -i | awk '{ print "IP:" $1 }'
+interval=30
+color=#91E78B
+
+[internet]
+interval=10
+
+[battery]
+command=~/.scripts/statusbar/battery BAT1
+interval=5
+
+[clock]
+label=📅
+interval=10
+#command=date +%H:%I
+
+[disk]
+interval=60
+command=~/.scripts/statusbar/disk /home 
+label=🏠
+

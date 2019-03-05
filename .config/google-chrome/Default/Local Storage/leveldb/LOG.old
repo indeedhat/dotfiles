@@ -1,0 +1,24 @@
+2019/03/05-09:26:16.907 7c1 Reusing MANIFEST leveldb/MANIFEST-000001
+2019/03/05-09:26:16.907 7c1 Recovering log #396
+2019/03/05-09:26:16.908 7c1 Reusing old log leveldb/000396.log 
+2019/03/05-09:26:40.181 7cc Level-0 table #400: started
+2019/03/05-09:26:40.193 7cc Level-0 table #400: 13202 bytes OK
+2019/03/05-09:26:40.198 7cc Delete type=0 #396
+2019/03/05-09:26:40.199 7cc Compacting 4@0 + 1@1 files
+2019/03/05-09:26:40.261 7cc Generated table #401@0: 45587 keys, 1410600 bytes
+2019/03/05-09:26:40.261 7cc Compacted 4@0 + 1@1 files => 1410600 bytes
+2019/03/05-09:26:40.265 7cc compacted to: files[ 0 1 1 0 0 0 0 ]
+2019/03/05-09:26:40.265 7cc Delete type=2 #390
+2019/03/05-09:26:40.265 7cc Delete type=2 #397
+2019/03/05-09:26:40.266 7cc Delete type=2 #395
+2019/03/05-09:26:40.266 7cc Delete type=2 #393
+2019/03/05-09:26:40.266 7cc Delete type=2 #400
+2019/03/05-09:29:46.258 cbd Level-0 table #403: started
+2019/03/05-09:29:46.273 cbd Level-0 table #403: 84308 bytes OK
+2019/03/05-09:29:46.279 cbd Delete type=0 #399
+2019/03/05-09:30:21.611 b48 Level-0 table #405: started
+2019/03/05-09:30:21.621 b48 Level-0 table #405: 82257 bytes OK
+2019/03/05-09:30:21.625 b48 Delete type=0 #402
+2019/03/05-09:31:13.415 b48 Level-0 table #407: started
+2019/03/05-09:31:13.429 b48 Level-0 table #407: 81004 bytes OK
+2019/03/05-09:31:13.434 b48 Delete type=0 #404
