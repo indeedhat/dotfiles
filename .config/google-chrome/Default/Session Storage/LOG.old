@@ -1,21 +1,9 @@
-2019/03/05-09:26:16.934 7cd Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/Session Storage/MANIFEST-000001
-2019/03/05-09:26:16.934 7cd Recovering log #243
-2019/03/05-09:26:16.934 7cd Reusing old log /home/indeedhat/.config/google-chrome/Default/Session Storage/000243.log 
-2019/03/05-09:28:56.006 c45 Level-0 table #247: started
-2019/03/05-09:28:56.016 c45 Level-0 table #247: 26738 bytes OK
-2019/03/05-09:28:56.020 c45 Delete type=0 #243
-2019/03/05-09:31:19.515 c45 Level-0 table #249: started
-2019/03/05-09:31:19.526 c45 Level-0 table #249: 19781 bytes OK
-2019/03/05-09:31:19.530 c45 Delete type=0 #246
-2019/03/05-09:35:41.720 c45 Level-0 table #251: started
-2019/03/05-09:35:41.732 c45 Level-0 table #251: 30589 bytes OK
-2019/03/05-09:35:41.737 c45 Delete type=0 #248
-2019/03/05-09:35:41.737 c45 Compacting 4@0 + 1@1 files
-2019/03/05-09:35:41.751 c45 Generated table #252@0: 3380 keys, 122096 bytes
-2019/03/05-09:35:41.751 c45 Compacted 4@0 + 1@1 files => 122096 bytes
-2019/03/05-09:35:41.755 c45 compacted to: files[ 0 1 1 0 0 0 0 ]
-2019/03/05-09:35:41.755 c45 Delete type=2 #247
-2019/03/05-09:35:41.756 c45 Delete type=2 #244
-2019/03/05-09:35:41.756 c45 Delete type=2 #251
-2019/03/05-09:35:41.756 c45 Delete type=2 #249
-2019/03/05-09:35:41.756 c45 Delete type=2 #241
+2019/03/05-20:55:30.988 85f Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+2019/03/05-20:55:30.988 85f Recovering log #254
+2019/03/05-20:55:30.988 85f Reusing old log /home/indeedhat/.config/google-chrome/Default/Session Storage/000254.log 
+2019/03/05-20:58:33.519 cb5 Level-0 table #258: started
+2019/03/05-20:58:33.525 cb5 Level-0 table #258: 18428 bytes OK
+2019/03/05-20:58:33.529 cb5 Delete type=0 #254
+2019/03/05-21:11:06.126 cb5 Level-0 table #260: started
+2019/03/05-21:11:06.138 cb5 Level-0 table #260: 19180 bytes OK
+2019/03/05-21:11:06.143 cb5 Delete type=0 #257

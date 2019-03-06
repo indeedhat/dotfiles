@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7320c5af-703f-4dc0-acd7-d54d5b54a989" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.bashrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.i3/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/.gits" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/.shellrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/.ssh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/fs/.disk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/fs/.ls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/fs/.stack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/package/.dnf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/package/.npm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/scripts/.hash_wrap" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/scripts/.sesame_street" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/style/.shell_prompt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.includes/vim/.fuck_other_editors" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.scripts/statusbar/clock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vimrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collect.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.i3/config" beforeDir="false" afterPath="$PROJECT_DIR$/.i3/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,53 +13,79 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.scripts/statusbar/ip">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="39" selection-start-column="39" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.scripts/statusbar/clock">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.scripts/statusbar/disk">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.scripts/statusbar/internet">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.scripts/statusbar/battery">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="225" selection-start-line="32" selection-start-column="225" selection-end-line="32" selection-end-column="225" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.scripts/statusbar/ip">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="39" selection-start-column="39" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.scripts/statusbar/clock">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="10" selection-start-column="10" selection-end-column="10" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.scripts/statusbar/disk">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" selection-start-line="1" selection-end-line="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.i3/config">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-180">
+                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.scripts/statusbar/internet">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="89" selection-start-line="17" selection-start-column="89" selection-end-line="17" selection-end-column="89" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.scripts/statusbar/battery">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="480">
+                  <caret line="32" column="225" selection-start-line="32" selection-start-column="225" selection-end-line="32" selection-end-column="225" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.scripts/statusbar/ip">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="39" selection-start-column="39" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,27 +98,36 @@
         <option value="$PROJECT_DIR$/.scripts/statusbar/internet" />
         <option value="$PROJECT_DIR$/.scripts/statusbar/battery" />
         <option value="$PROJECT_DIR$/.scripts/statusbar/disk" />
+        <option value="$PROJECT_DIR$/.i3/config.old" />
+        <option value="$PROJECT_DIR$/.i3/config" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
+    <option name="x" value="1286" />
     <option name="y" value="14" />
-    <option name="width" value="628" />
+    <option name="width" value="623" />
     <option name="height" value="1026" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="dotfiles" type="b2602c69:ProjectViewProjectNode" />
               <item name="dotfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dotfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dotfiles" type="462c0819:PsiDirectoryNode" />
+              <item name=".i3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dotfiles" type="b2602c69:ProjectViewProjectNode" />
@@ -123,7 +144,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -135,6 +155,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.i3" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -162,16 +187,17 @@
       <workItem from="1551397950973" duration="228000" />
       <workItem from="1551400237632" duration="162000" />
       <workItem from="1551434480730" duration="322000" />
+      <workItem from="1551824836964" duration="1337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2755000" />
+    <option name="totallyTimeSpent" value="4092000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="14" width="628" height="1026" extended-state="0" />
+    <frame x="1286" y="14" width="623" height="1026" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2724138" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31652173" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -206,13 +232,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.scripts/statusbar/ip">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.scripts/statusbar/clock">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -237,7 +256,28 @@
     <entry file="file://$PROJECT_DIR$/.scripts/statusbar/disk">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.i3/config.old">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.scripts/statusbar/ip">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.i3/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>

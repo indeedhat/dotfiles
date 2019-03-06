@@ -1,3 +1,18 @@
-2019/03/05-09:57:57.950 8f1 Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/Session Storage/MANIFEST-000001
-2019/03/05-09:57:57.950 8f1 Recovering log #250
-2019/03/05-09:57:57.950 8f1 Reusing old log /home/indeedhat/.config/google-chrome/Default/Session Storage/000250.log 
+2019/03/05-21:24:11.363 ade Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/Session Storage/MANIFEST-000001
+2019/03/05-21:24:11.363 ade Recovering log #259
+2019/03/05-21:24:11.363 ade Reusing old log /home/indeedhat/.config/google-chrome/Default/Session Storage/000259.log 
+2019/03/05-22:24:01.853 248b Level-0 table #263: started
+2019/03/05-22:24:01.865 248b Level-0 table #263: 20169 bytes OK
+2019/03/05-22:24:01.869 248b Delete type=0 #259
+2019/03/05-22:24:01.869 248b Compacting 4@0 + 1@1 files
+2019/03/05-22:24:01.880 248b Generated table #264@0: 3568 keys, 95340 bytes
+2019/03/05-22:24:01.880 248b Compacted 4@0 + 1@1 files => 95340 bytes
+2019/03/05-22:24:01.884 248b compacted to: files[ 0 1 1 0 0 0 0 ]
+2019/03/05-22:24:01.884 248b Delete type=2 #263
+2019/03/05-22:24:01.884 248b Delete type=2 #252
+2019/03/05-22:24:01.884 248b Delete type=2 #258
+2019/03/05-22:24:01.884 248b Delete type=2 #260
+2019/03/05-22:24:01.884 248b Delete type=2 #255
+2019/03/05-23:40:04.726 248b Level-0 table #266: started
+2019/03/05-23:40:04.730 248b Level-0 table #266: 18491 bytes OK
+2019/03/05-23:40:04.734 248b Delete type=0 #262
