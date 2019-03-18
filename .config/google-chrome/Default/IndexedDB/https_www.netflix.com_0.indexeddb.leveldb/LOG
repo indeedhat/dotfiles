@@ -1,6 +1,0 @@
-2019/03/18-20:49:08.487 7c0 Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/MANIFEST-000001
-2019/03/18-20:49:08.487 7c0 Recovering log #91
-2019/03/18-20:49:08.501 7c0 Reusing old log /home/indeedhat/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/000091.log 
-2019/03/18-21:00:14.879 137f Level-0 table #95: started
-2019/03/18-21:00:14.895 137f Level-0 table #95: 2194204 bytes OK
-2019/03/18-21:00:14.900 137f Delete type=0 #91
