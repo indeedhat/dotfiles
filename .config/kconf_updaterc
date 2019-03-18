@@ -1,117 +1,117 @@
 updateInfoAdded=true
 
 [akregator.upd]
-ctime=1550970610
+ctime=1551820660
 done=akregator-15.08-kickoff
-mtime=1540533483
+mtime=1548661233
 
 [disable_kmix.upd]
-ctime=1550970601
+ctime=1551820655
 done=PlasmaVolume_DisableKMixAutostart
-mtime=1543335196
+mtime=1546945445
 
 [filepicker.upd]
-ctime=1550970592
+ctime=1551820643
 done=filepicker-remove-old-previews-entry
-mtime=1547470329
+mtime=1549151919
 
 [fonts_akregator.upd]
-ctime=1550970623
+ctime=1551820683
 done=Plasma_Fonts_Akregator
-mtime=1543335171
+mtime=1546945420
 
 [fonts_global.upd]
-ctime=1550970623
+ctime=1551820683
 done=Fonts_Global
-mtime=1543335171
+mtime=1546945420
 
 [fonts_global_toolbar.upd]
-ctime=1550970623
+ctime=1551820683
 done=Fonts_Global_Toolbar
-mtime=1543335171
+mtime=1546945420
 
 [fonts_kate.upd]
-ctime=1550970623
+ctime=1551820683
 done=Plasma_Fonts_Kate
-mtime=1543335171
+mtime=1546945420
 
 [gwenview.upd]
-ctime=1550970626
-done=SideBar_StatusBar_Rename
-mtime=1531165829
+ctime=1551820656
+done=SideBar_StatusBar_Rename,ImageView_AlphaBackgroundMode_Update
+mtime=1549169284
 
 [importwizard.upd]
-ctime=1550970609
+ctime=1551820657
 done=importwizard-15.08-kickoff
-mtime=1540533480
+mtime=1548661229
 
 [kaddressbook.upd]
-ctime=1550970612
+ctime=1551820658
 done=kaddressbook-15.08-kickoff
-mtime=1540533490
+mtime=1549264937
 
 [kcalcrc.upd]
 ctime=1550970632
 mtime=1530955471
 
 [kget.upd]
-ctime=1550970605
-mtime=1541171664
+ctime=1551820654
+mtime=1549169581
 
 [kmail.upd]
-ctime=1550970612
+ctime=1551820659
 done=kmail-15.08-kickoff
-mtime=1540902779
+mtime=1548661252
 
 [kmail2.upd]
-ctime=1550970612
+ctime=1551820659
 done=kmail2
-mtime=1540902779
+mtime=1548661252
 
 [kontact.upd]
-ctime=1550970613
+ctime=1551820659
 done=kontact-15.08-kickoff
-mtime=1540533509
+mtime=1549088177
 
 [korganizer.upd]
-ctime=1550970613
+ctime=1551820658
 done=korganizer-15.08-kickoff
-mtime=1540895029
+mtime=1548747496
 
 [krdb_libpathwipe.upd]
-ctime=1550970620
-mtime=1543335129
+ctime=1551820683
+mtime=1546945379
 
 [krunnerplugins.upd]
-ctime=1550970623
-mtime=1543335242
+ctime=1551820682
+mtime=1546945490
 
 [kscreenlocker.upd]
-ctime=1550970595
+ctime=1551820651
 done=0.1-autolock
-mtime=1543334969
+mtime=1546945229
 
 [kwin.upd]
-ctime=1550970599
+ctime=1551820652
 done=replace-scalein-with-scale
-mtime=1543335013
+mtime=1546945270
 
 [messageviewer.upd]
-ctime=1550970607
+ctime=1551820656
 done=messageviewer_move_gravatar
-mtime=1540968967
+mtime=1548747524
 
 [pimsettingexporter.upd]
-ctime=1550970609
+ctime=1551820658
 done=pimsettingexporter-15.08-kickoff
-mtime=1540533520
+mtime=1548661283
 
 [sieveeditor.upd]
-ctime=1550970610
+ctime=1551820649
 done=sieveeditor-15.08-kickoff
-mtime=1540533524
+mtime=1548661289
 
 [webengineurlinterceptoradblock.upd]
-ctime=1550970609
+ctime=1551820657
 done=webengineurlinterceptoradblock_move_settings
-mtime=1540532727
+mtime=1548661087

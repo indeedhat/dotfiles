@@ -1,15 +1,25 @@
-2019/03/04-21:22:02.623 7cc Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/MANIFEST-000001
-2019/03/04-21:22:02.623 7cc Recovering log #27
-2019/03/04-21:22:02.630 7cc Reusing old log /home/indeedhat/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/000027.log 
-2019/03/04-22:25:42.744 14c2 Level-0 table #31: started
-2019/03/04-22:25:42.760 14c2 Level-0 table #31: 2076741 bytes OK
-2019/03/04-22:25:42.764 14c2 Delete type=0 #27
-2019/03/04-22:25:42.764 14c2 Compacting 4@0 + 1@1 files
-2019/03/04-22:25:42.788 14c2 Generated table #32@0: 15 keys, 9049 bytes
-2019/03/04-22:25:42.788 14c2 Compacted 4@0 + 1@1 files => 9049 bytes
-2019/03/04-22:25:42.792 14c2 compacted to: files[ 0 1 1 0 0 0 0 ]
-2019/03/04-22:25:42.792 14c2 Delete type=2 #25
-2019/03/04-22:25:42.792 14c2 Delete type=2 #28
-2019/03/04-22:25:42.792 14c2 Delete type=2 #22
-2019/03/04-22:25:42.793 14c2 Delete type=2 #20
-2019/03/04-22:25:42.793 14c2 Delete type=2 #31
+2019/03/17-16:52:14.082 7ca Reusing MANIFEST /home/indeedhat/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/MANIFEST-000001
+2019/03/17-16:52:14.082 7ca Recovering log #81
+2019/03/17-16:52:14.085 7ca Reusing old log /home/indeedhat/.config/google-chrome/Default/IndexedDB/https_www.netflix.com_0.indexeddb.leveldb/000081.log 
+2019/03/17-18:21:48.350 1afb Level-0 table #85: started
+2019/03/17-18:21:48.384 1afb Level-0 table #85: 2107958 bytes OK
+2019/03/17-18:21:48.390 1afb Delete type=0 #81
+2019/03/17-20:31:11.693 1afb Level-0 table #87: started
+2019/03/17-20:31:11.708 1afb Level-0 table #87: 2029594 bytes OK
+2019/03/17-20:31:11.715 1afb Delete type=0 #84
+2019/03/17-20:31:11.717 1afb Compacting 4@0 + 3@1 files
+2019/03/17-20:31:11.752 1afb Generated table #88@0: 19 keys, 2209013 bytes
+2019/03/17-20:31:11.767 1afb Generated table #89@0: 12 keys, 2138712 bytes
+2019/03/17-20:31:11.792 1afb Generated table #90@0: 111 keys, 942470 bytes
+2019/03/17-20:31:11.792 1afb Compacted 4@0 + 3@1 files => 5290195 bytes
+2019/03/17-20:31:11.800 1afb compacted to: files[ 0 3 1 0 0 0 0 ]
+2019/03/17-20:31:11.800 1afb Delete type=2 #87
+2019/03/17-20:31:11.801 1afb Delete type=2 #85
+2019/03/17-20:31:11.801 1afb Delete type=2 #76
+2019/03/17-20:31:11.802 1afb Delete type=2 #77
+2019/03/17-20:31:11.802 1afb Delete type=2 #75
+2019/03/17-20:31:11.803 1afb Delete type=2 #82
+2019/03/17-20:31:11.803 1afb Delete type=2 #79
+2019/03/17-22:43:04.970 1afb Level-0 table #92: started
+2019/03/17-22:43:04.991 1afb Level-0 table #92: 2080899 bytes OK
+2019/03/17-22:43:04.996 1afb Delete type=0 #86

@@ -11,8 +11,8 @@
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="0"/>
+        <property name="X" type="int" value="1440"/>
+        <property name="Y" type="int" value="936"/>
       </property>
     </property>
     <property name="HDMI-1-2" type="string" value="AOC International 25&quot;">
@@ -41,6 +41,19 @@
         <property name="Y" type="int" value="0"/>
       </property>
     </property>
+    <property name="DP-1" type="string" value="AOC International 25&quot;">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="219cafcc75d5e03ebddd63c3976364a6dd40c5b5"/>
+      <property name="Resolution" type="string" value="2560x1440"/>
+      <property name="RefreshRate" type="double" value="59.950550"/>
+      <property name="Rotation" type="int" value="90"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="false"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
   </property>
   <property name="IdentityPopups" type="bool" value="false"/>
   <property name="Notify" type="bool" value="true"/>
@@ -58,6 +71,28 @@
         <property name="X" type="int" value="0"/>
         <property name="Y" type="int" value="0"/>
       </property>
+    </property>
+  </property>
+  <property name="Schemes" type="empty">
+    <property name="Apply" type="string" value="Default"/>
+  </property>
+  <property name="1af17e73721dbe0c40011b82ed4bb1a7dbe3ce29" type="string" value="something">
+    <property name="eDP-1" type="string" value="Laptop">
+      <property name="Active" type="bool" value="true"/>
+      <property name="EDID" type="string" value="10cf2b8a3218252ad698bef840e647c583e2f850"/>
+      <property name="Resolution" type="string" value="1920x1080"/>
+      <property name="RefreshRate" type="double" value="144.027931"/>
+      <property name="Rotation" type="int" value="0"/>
+      <property name="Reflection" type="string" value="0"/>
+      <property name="Primary" type="bool" value="true"/>
+      <property name="Position" type="empty">
+        <property name="X" type="int" value="0"/>
+        <property name="Y" type="int" value="0"/>
+      </property>
+    </property>
+    <property name="DP-1" type="string" value="BenQ 24&quot;">
+      <property name="Active" type="bool" value="false"/>
+      <property name="EDID" type="string" value="a7e29e6ecfe582085ee3ba6e5bdd38e8134b105b"/>
     </property>
   </property>
 </channel>
