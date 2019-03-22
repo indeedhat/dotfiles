@@ -1,149 +1,73 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
+## i3 config
+# ##########
 
 
-set $super Mod4
-set $mod Mod1
+## Startup
+##########
 
-
-# gaps fix
-for_window [class="^.*"] border pixel 3
-gaps outer 0
-gaps inner 10
-
-
-# startups
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
+
 # Run the script to update the mpd i3block on change.
 exec_always --no-startup-id mpdupdate
+
 # start xfce panel
 exec --no-startup-id xfce4-panel --disable-wm-check
 
-# start the network manager applet
-# exec --no-startup-id nm-applet
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 10
+## definitions
+##############
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# mod keys
+set $super Mod4
+set $mod Mod1
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn't scale on retina/hidpi displays.
-
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
+# arrow keys
 set $up k
 set $down j
 set $left h
 set $right l
 
-# use Mouse+$super to drag floating windows to their wanted position
-floating_modifier $mod
+# workspaces
+set $ws1 "(1) Code"
+set $ws2 "(2) Comms"
+set $ws3 "(3) Code"
+set $ws4 "(4) Server Apps"
+set $ws5 "(5) Terminal"
+set $ws6 "(6) Browser"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "(9) Media"
+set $ws10 "10"
 
-# start a terminal
-bindsym $super+Return exec xfce4-terminal
 
-# app bindings
-bindsym $super+$mod+i exec xfce4-terminal -e htop
-bindsym $super+$mod+r exec xfce4-terminal -e ranger
-bindsym $super+$mod+c exec google-chrome
+## Dmenu
+########
 
-# kill focused window
-bindsym $super+Shift+q kill
+# open projects in idea
+bindsym $super+i exec ~/.scripts/dmenu/projects
 
 # start dmenu (a program launcher)
 bindsym $super+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $super+d exec --no-startup-id i3-dmenu-desktop
+bindsym $super+slash exec dmenu_run
 
-# change focus
-bindsym $super+$left focus left
-bindsym $super+$down focus down
-bindsym $super+$up focus up
-bindsym $super+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $super+Left focus left
-bindsym $super+Down focus down
-bindsym $super+Up focus up
-bindsym $super+Right focus right
+## i3 settings
+##############
 
-# move focused window
-bindsym $super+Shift+$left move left
-bindsym $super+Shift+$down move down
-bindsym $super+Shift+$up move up
-bindsym $super+Shift+$right move right
+# reload the configuration file
+bindsym $super+Shift+c reload
 
-# alternatively, you can use the cursor keys:
-bindsym $super+Shift+Left move left
-bindsym $super+Shift+Down move down
-bindsym $super+Shift+Up move up
-bindsym $super+Shift+Right move right
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
 
-# split in horizontal orientation
-bindsym $super+v split toggle
+# exit i3 (logs you out of your X session)
+bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# split in vertical orientation
-# bindsym $super+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $super+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $super+s layout stacking
-bindsym $super+w layout tabbed
-bindsym $super+e layout toggle split
-
-# toggle tiling / floating
-bindsym $super+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $super+space focus mode_toggle
-
-# focus the parent container
-bindsym $super+a focus parent
-
-# focus the child container
-#bindsym $super+d focus child
-
-# move the currently focused window to the scratchpad
-bindsym $super+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $super+minus scratchpad show
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
+# lock the screen
+bindsym Control+$mod+l exec "i3lock -i /home/phpmatt/Pictures/wife.png -t"
+## Workspaces
+#############
 
 # switch to workspace
 bindsym $super+1 workspace $ws1
@@ -169,71 +93,82 @@ bindsym $super+Shift+8 move container to workspace $ws8
 bindsym $super+Shift+9 move container to workspace $ws9
 bindsym $super+Shift+0 move container to workspace $ws10
 
-# reload the configuration file
-bindsym $super+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $super+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+## workspace program assignment
+assign [class="jetbrains-idea"] $ws1
+assign [class="xfce4-terminal"] $ws5
+assign [class="skype"] $ws2
+assign [class="Thunderbird"] $ws6
+assign [class="sporify"] $ws9
+assign [class="mysql-workbench-bin"] $ws4
+assign [class="fiezila"] $ws4
+assign [class="google-chrome"] $ws6
 
-#h resize window (you can also use the mouse for that)
+
+## Status Bar
+#############
+
+bar {
+    status_command i3blocks
+    mode dock
+    position top
+}
+
+
+## Window ops
+#############
+
+# toggle split direction
+bindsym $super+v split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $super+s layout stacking
+bindsym $super+w layout tabbed
+bindsym $super+e layout toggle split
+
+# kill focused window
+bindsym $super+Shift+q kill
+bindsym $super+BackSpace kill
+
 # live resizing
 bindsym $super+$mod+$left resize shrink width 10 px or 5 ppt
 bindsym $super+$mod+$right resize grow width 10 px or 5 ppt
 bindsym $super+$mod+$up resize grow height 10 px or 5 ppt
 bindsym $super+$mod+$down resize shrink height 10 px or 5 ppt
 
+# move focused window
+bindsym $super+Shift+$left move left
+bindsym $super+Shift+$down move down
+bindsym $super+Shift+$up move up
+bindsym $super+Shift+$right move right
 
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $super+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $super+r mode "default"
-}
-
-bindsym $super+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3blocks
-	mode dock
-	position top
-}
-
-######################################################################
-# Style
-
-# gaps
-#for_window [class="^.*"] border pixel 0
-#default_border none
-#title_align center
+# change focus
+bindsym $super+$left focus left
+bindsym $super+$down focus down
+bindsym $super+$up focus up
+bindsym $super+$right focus right
 
 
-#######################################################################
-# automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-# exec i3-config-wizard
+## Style
+########
+
+# is used in the bar {} block below.
+font pango:monospace 14
+
+# gaps fix
+for_window [class="^.*"] border pixel 3
+gaps outer 0
+gaps inner 10
+
+
+## Applications
+###############
+
+# start a terminal
+bindsym $super+Return exec xfce4-terminal
+bindsym $super+$mod+i exec xfce4-terminal -e htop
+bindsym $super+$mod+r exec xfce4-terminal -e ranger
+bindsym $super+$mod+c exec google-chrome
+
