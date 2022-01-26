@@ -1,0 +1,37 @@
+#!/bin/bash
+
+opts="shutdown\nrestart\nrestart-windows\nlogout\nsleep\nhibernate\nlock"
+
+pick=$(echo -e $opts | dmenu -i -l 5 -p "Power" "$@")
+
+case $pick in 
+    shutdown)
+        shutdown -h now
+        ;;
+    
+    restart)
+        reboot
+        ;;
+
+    restart-windows)
+        sudo grub-reboot 2
+        reboot
+        ;;
+    
+    logout)
+        sway exit
+        ;;
+
+    sleep)
+        echo -n mem > /sys/power/state
+        ;;
+    
+    hibernate)
+        echo -n disk > /sys/power/state
+        ;;
+    
+    lock)
+	i3lock -i /home/indeedhat/Pictures/bg/panda.png
+        ;;
+
+esac

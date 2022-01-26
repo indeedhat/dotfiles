@@ -1,0 +1,6 @@
+#!/bin/sh
+free=$(cat /proc/meminfo | grep MemAvailable | awk '{ printf "%.1f",  $2/1024/1024 }')
+total=$(cat /proc/meminfo | grep MemTotal | awk '{ printf "%.1f",  $2/1024/1024 }')
+used=$(echo "$total $free" | awk '{ printf "%.1f", $1 - $2 }')
+
+echo "$used/${total}G"

@@ -1,0 +1,20 @@
+window.dynamic_title: true
+TERM: xterm-256color
+# background_opacity: 0.95
+dynamic_padding: true
+window:
+  opacity: 0.95
+font:
+    size: 8
+    normal:
+      family: Open Dyslexic Mono Nerd Font
+      style: Medium
+    bold:
+      family: Open Dyslexic Mono Nerd Font
+      style: Bold
+    italic:
+      family: Open Dyslexic Mono Nerd Font
+      style: Italic
+import:
+  - ~/.config/alacritty/dracula.yml
+

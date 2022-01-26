@@ -1,0 +1,34 @@
+full_text= | 
+align=center
+color=#f542f2
+separator=false
+separator_block_width=7
+command=~/.scripts/statusbar/$BLOCK_NAME
+# separator_block_width=15
+markup=pango
+
+[ip]
+#command=hostname -i | awk '{ print "IP:" $1 }'
+interval=10
+
+[seperator]
+
+[battery]
+command=~/.scripts/statusbar/battery BAT1
+interval=5
+
+[seperator]
+
+[clock]
+#label=&#x1F550;
+interval=10
+markup=pango
+#command=date +%H:%I
+
+[seperator]
+
+[disk]
+interval=60
+command=~/.scripts/statusbar/disk /home 
+
+

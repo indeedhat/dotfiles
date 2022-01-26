@@ -1,0 +1,11 @@
+rpc.store_replay: false
+logging.enabled: false
+logging.level: DEBUG
+logging.path: phpactor.log
+composer.autoload_deregister: false
+completion.limit: 256
+language_server_completion.trim_leading_dollar: true
+
+navigator.destinations:
+    template: display/templates/<kernel>.tpl.php
+    logic: logic/<kernel>.lgc.php

@@ -1,0 +1,1 @@
+echo `top -b -n1 | grep "Cpu(s)" | awk '{ printf "%05.2f%%", $2+$4 }'` 

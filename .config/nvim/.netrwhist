@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/indeedhat/Documents/github/game-portal/admin/components/form'
+let g:netrw_dirhist_0='/home/indeedhat/Documents/github/game-portal/k8s/indeedhat/backend'
+let g:netrw_dirhist_9='/home/indeedhat/Documents/github/game-portal/k8s/indeedhat'
+let g:netrw_dirhist_8='/home/indeedhat/Documents/github/ContractorConnector'
+let g:netrw_dirhist_7='/home/indeedhat/Documents/github/audit-log/_script'
+let g:netrw_dirhist_6='/home/indeedhat/Documents/github/ContractorConnector/_script/fix'
+let g:netrw_dirhist_5='/home/indeedhat/.config/bash'
+let g:netrw_dirhist_4='/home/indeedhat/Documents/github/ansible/av2/roles'
+let g:netrw_dirhist_3='/home/indeedhat/Documents/github/ansible/av2/roles/selinux/tasks'
+let g:netrw_dirhist_2='/home/indeedhat/Documents/github/ansible/av2/roles/selinux'

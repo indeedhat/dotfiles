@@ -1,0 +1,20 @@
+#!/usr/bin/awk -f
+BEGIN {
+    RS=" entry\\(";
+    FS="\""
+}
+
+/artist/ {
+    artist = $4
+}
+/title/ {
+    title = $4
+}
+
+END {
+    if (title) {
+        print title " - " artist
+    } else {
+        print "Not Playing"
+    }
+}

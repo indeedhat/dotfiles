@@ -1,0 +1,27 @@
+#!/bin/bash
+
+opts="single\ndual\nnvsingle\nnvdual\nOh baby a tripple!"
+
+pick=$(echo -e $opts | dmenu -i -l 5 -p "Display" "$@")
+
+case $pick in 
+    single)
+        /home/indeedhat/.screenlayout/single.sh
+        ;;
+    
+    dual)
+        /home/indeedhat/.screenlayout/standard-home.sh
+        ;;
+
+    nvsingle)
+        /home/indeedhat/.screenlayout/nv-single.sh
+        ;;
+    nvdual)
+        /home/indeedhat/.screenlayout/nv-dual.sh
+        ;;
+    
+    "Oh baby a tripple!")
+        /home/indeedhat/.screenlayout/tripple.sh
+        ;;
+    
+esac

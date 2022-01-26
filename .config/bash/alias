@@ -1,0 +1,42 @@
+# ssh
+alias sshmedia="ssh root@192.168.1.4"
+alias sshwork="ssh phpmatt@81.102.23.192"
+alias sshoffice="ssh -oHostKeyAlgorithms=+ssh-dss root@81.98.246.238"
+
+alias sshpc1="ssh phpmatt@109.228.53.30"
+alias sshpcdb="ssh root@77.68.10.27"
+
+alias sshav1="ssh root@77.68.80.139"
+alias sshav2="ssh root@104.192.6.161"
+alias sshav3="ssh root@74.208.129.23"
+alias sshk8s="ssh root@77.68.116.56"
+
+alias sshpc1="ssh phpmatt@109.228.53.30"
+alias sshpc2="ssh root@77.68.29.41"
+alias sshpcdb="ssh root@77.68.30.45"
+alias sshpcmaster="ssh root@109.228.52.126"
+alias sshdeploy="ssh root@109.228.59.57"
+
+alias sshwordpress="ssh root@77.68.116.56"
+
+alias sshmc="ssh root@mc.phpmatt.com"
+
+# Neovim
+alias nano="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias svim="sudo nvim"
+alias v=nvim
+
+# dev things
+alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
+
+#File system
+alias ll="ls -alh --color"
+alias du="du -h"
+alias df="df -h"
+
+# matt is dumb
+alias :q="exit"
+
+eval $(thefuck --alias)

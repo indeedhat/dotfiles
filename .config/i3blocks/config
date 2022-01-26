@@ -1,0 +1,58 @@
+full_text= · 
+separator=false
+align=center
+separator_block_width=7
+command=~/.scripts/statusbar/$BLOCK_NAME
+# separator_block_width=15
+markup=pango
+
+[spotify]
+interval=10
+
+[seperator]
+
+[ip]
+#command=hostname -i | awk '{ print "IP:" $1 }'
+interval=10
+
+[seperator]
+
+[battery]
+command=~/.scripts/statusbar/battery BAT1
+interval=5
+
+[seperator]
+
+[memory]
+interval=5
+
+[seperator]
+
+[cpu]
+interval=2
+
+[seperator]
+
+[disk]
+interval=60
+command=~/.scripts/statusbar/disk /home 
+
+[seperator]
+
+[clock]
+interval=10
+markup=pango
+
+[seperator]
+
+[brightness]
+label=
+interval=5
+
+[seperator]
+
+[cpm]
+interval=persist
+command=sudo keyspeed -b -i3 -d /dev/input/by-id/usb-t.m.k._HHKB_mod-if04-event-kbd -d /dev/input/event4
+
+[seperator]

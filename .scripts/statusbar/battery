@@ -1,0 +1,15 @@
+#!/bin/sh
+# Give a battery name (e.g. BAT0) as an argument.
+
+capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+status=$(cat /sys/class/power_supply/"$1"/status)
+
+if [ "$capacity" -ge 25 ]; then
+	color=""
+else
+	color="color='#ff0000'"
+fi
+
+[ "$status" = "Charging" ] && color="color='#befaaf'"
+
+echo "<span $color>$capacity%</span>"
