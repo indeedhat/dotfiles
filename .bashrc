@@ -20,7 +20,7 @@ export ARDMK_DIR=/home/indeedhat/Documents/Github/Arduino-Makefile
 export TERM=xterm-256color
 export EDITOR=nvim
 
-source <(find ~/.config/bash -type f -exec cat {} +)
+source <(find ~/.config/bash/ -type f -exec cat {} +)
 
 alias luamake=/home/indeedhat/Documents/github/dev-tools/lua-language-server/3rd/luamake/luamake
 
