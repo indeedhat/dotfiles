@@ -4,6 +4,7 @@
 
 vim.o.termguicolors = true
 vim.cmd [[
+    let g:dracula_italic = 0
     colorscheme dracula
 ]]
 vim.o.conceallevel = 0
