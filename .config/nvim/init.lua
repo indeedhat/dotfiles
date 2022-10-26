@@ -2,6 +2,7 @@ vim.cmd [[
     let g:kragle_use_tabs = v:false
 ]]
 
+
 --Remap space as leader key
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
@@ -12,6 +13,8 @@ require("theme")
 require("vimscript")
 require("treesitter")
 require("lsp")
+require("vimspector")
+-- require("symbols-outline")
 
 require('neoterm').setup({
 	mode = 'horizontal', -- vertical/horizontal/fullscreen
@@ -29,6 +32,8 @@ vim.wo.signcolumn = 'yes'
 
 --Set colorscheme (order is important here)
 
+-- qol normal mode
+vim.api.nvim_set_keymap('i', ';;', '<esc>$i;<esc>', { noremap = true })
 
 -- when making jumps move the active line to the middle
 vim.api.nvim_set_keymap('n', 'n', 'nzz', { noremap = true })
@@ -42,10 +47,22 @@ vim.api.nvim_set_keymap('i', '(', '(<c-g>u', { noremap = true })
 vim.api.nvim_set_keymap('i', '{', '{<c-g>u', { noremap = true })
 
 -- move lines about without adding them to a register
-vim.api.nvim_set_keymap('n', '<c-j>', ':m .+1<CR>==', { noremap = true })
-vim.api.nvim_set_keymap('n', '<c-k>', ':m .-2<CR>==', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'J', ':m \'>+1<CR>gv=gv', { noremap = true })
-vim.api.nvim_set_keymap('v', 'J', ':m \'<-2<CR>gv=gv', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-J>', ':m .+1<CR>==', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-K>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<c-J>', ':m \'>+1<CR>gv=gv', { noremap = true })
+vim.api.nvim_set_keymap('v', '<c-J>', ':m \'<-2<CR>gv=gv', { noremap = true })
+
+-- split navigation
+vim.api.nvim_set_keymap('n', '<c-j>', '<c-w><c-j>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-k>', '<c-w><c-k>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-h>', '<c-w><c-h>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<c-l>', '<c-w><c-l>', { noremap = true })
+
+vim.api.nvim_set_keymap('n', '<Leader>cn', ':cn<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>cp', ':cp<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>cop', ':copen<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>cN', ':cnf<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>cP', ':cpf<cr>', { noremap = true })
 
 
 -- create a jump list entry when moving multiple lines 
@@ -61,6 +78,13 @@ vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true,
 -- Y yank until the end of line  (note: this is now a default on master)
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
 
+-- Restart the language server
+vim.api.nvim_set_keymap('n', '<Leader>lR', ':LspRestart<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>li', ':LspInfo<CR>', { noremap = true })
+
+-- toggle teh symbols display
+vim.api.nvim_set_keymap('n', '<Leader>so', ':SymbolsOutline<CR>', { noremap = true })
+
 -- Highlight on yank
 vim.api.nvim_exec(
     [[
@@ -71,6 +95,9 @@ vim.api.nvim_exec(
     ]],
     false
 )
+
+-- align things
+vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', { noremap = false })
 
 --Map blankline
 vim.g.indent_blankline_char = '┊'

@@ -29,7 +29,7 @@ local on_attach = function(_, bufnr)
     buf_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     buf_set_keymap('v', '<Leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts)
-    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', 'gR', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<Leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
     buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
@@ -38,14 +38,22 @@ local on_attach = function(_, bufnr)
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
-vim.lsp.set_log_level('debug')
-
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = { 'gopls', 'rust_analyzer', 'pyright', 'phpactor', 'tsserver', 'solargraph' }
+local servers = {
+    'gopls',
+    'rust_analyzer',
+    'pyright',
+    'intelephense',
+    'phpactor',
+    'tsserver',
+    'solargraph',
+    'kotlin_language_server',
+    'ccls'
+}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
@@ -55,7 +63,7 @@ end
 
 -- Lua language server
 local system_name       = "Linux"
-local sumneko_root_path = "/home/indeedhat/Documents/github/dev-tools/lua-language-server"
+local sumneko_root_path = "/usr"
 local sumneko_binary    = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
@@ -86,22 +94,22 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 -- C# language server
-local pid = vim.fn.getpid()
-local omnisharp_bin = "/usr/bin/omnisharp"
-require'lspconfig'.omnisharp.setup{
-    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
+-- local pid = vim.fn.getpid()
+-- m
+-- local omnisharp_bin = "/usr/bin/omnisharp"
+-- require'lspconfig'.omnisharp.setup{
+--     cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- }
 
 -- nvim-cmp setup
 -- this needs to be called before creating the capabilities
-local luasnip = require 'luasnip'
 local cmp = require 'cmp'
 cmp.setup {
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body)
         end,
     },
     mapping = {
@@ -117,8 +125,10 @@ cmp.setup {
     },
     sources = cmp.config.sources {
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        { name = "vsnip" },
+        { name = "path" },
     },
+    preselect = cmp.PreselectMode.None,
 }
 
-vim.api.nvim_command[[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+vim.api.nvim_command[[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]]

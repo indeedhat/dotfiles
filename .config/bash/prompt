@@ -8,10 +8,10 @@ _ps_git_branch() {
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
     if [ -z "${branch}" ]; then
         echo ''
-    else
-        # printf " \e[0mgit=\e[36m\"${branch}\"\e[2m\e[39m"
-        echo "$(_ps_method Git ${branch})"
+        return 0
     fi
+
+    echo "$(_ps_method Git ${branch})"
 }
 
 _ps_podctl_def() {
@@ -24,6 +24,28 @@ _ps_podctl_def() {
     NAMESPACE=$(grep "\bnamespace\b" .podctl.toml | awk -F'"' '{ print $2 }')
 
     echo "$(_ps_method PodCTL "${NAMESPACE}.${NAME}")"
+}
+
+_ps_go_mod_def() {
+    MOD=$(go env GOMOD)
+    if [[ -z "${MOD}" || "${MOD}" == "/dev/null" ]]; then
+        echo ''
+        return 0
+    fi
+
+    MOD=$(cat $MOD | grep module | awk '{ print $2 }')
+    echo "$(_ps_method GoModule "$MOD")"
+}
+
+_ps_go_work_def() {
+    WORK=$(go env GOWORK)
+    if [[ -z "${WORK}" ]]; then
+        echo ''
+        return 0
+    fi
+
+    WORK=$(echo $WORK | awk -F'/' '{ print $--NF }')
+    echo "$(_ps_method GoWorkspace "$WORK")"
 }
 
 _ps_string() {
@@ -43,7 +65,9 @@ _ps_symbol() {
 }
 
 _ps_build() {
-    PS1="\n\u$(_ps_method Dir '\w' true)$(_ps_git_branch)$(_ps_podctl_def)\n\[\e[0m\]"
+    PS1="\n\u$(_ps_method Dir '\w' true)$(_ps_git_branch)$(_ps_podctl_def)$(_ps_go_work_def)$(_ps_go_mod_def)\n\[\e[0m\]"
 }
 
 PROMPT_COMMAND='echo -ne "\033]0;$(basename ${PWD})\007" && _ps_build'
+
+# vi: ft=sh

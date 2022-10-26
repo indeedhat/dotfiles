@@ -18,22 +18,6 @@ let g:traces_num_range_preview = 1
 " Json
 let g:vim_json_syntax_conceal = 0
 
-" Submode
-let g:submode_always_show_submode = 1
-call submode#enter_with('window', 'n', '', '<C-w>')
-call submode#leave_with('window', 'n', '', '<ESC>')
-
-for key in ['a','b','c','d','e','f','g','h','i','j','k','l','m', 'n','o','p','q','r','s','t','u','v','w','x','y','z']
-  call submode#map('window', 'n', '', key, '<C-w>' . key)
-  call submode#map('window', 'n', '', toupper(key), '<C-w>' . toupper(key))
-  call submode#map('window', 'n', '', '<C-' . key . '>', '<C-w>' . '<C-'.key . '>')
-endfor
-
-for key in ['=','_','+','-','<','>']
-  call submode#map('window', 'n', '', key, '<C-w>' . key)
-endfor
-
-
 " CtrlP
 let g:ctrlp_show_hidden = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/vendor/*,*/node_modules/*
@@ -100,10 +84,6 @@ autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 " NvimTree
 nmap <Leader>nt :NvimTreeToggle<CR>
 
-" Quick Fix
-noremap <Leader>cn :cn<CR>
-noremap <Leader>cp :cp<CR>
-noremap <Leader>cop :copen<CR>
 
 " Kraggle
 noremap <Leader>ka :call kragle#AdoptBuffer()<CR>
@@ -162,4 +142,6 @@ autocmd BufEnter NERD_tree* :LeadingSpaceDisable
 
 autocmd FileType make setlocal noexpandtab
 autocmd FileType php set iskeyword+=$
+
+command! BClean execute '%bdelete|edit #|normal `"'
 ]]

@@ -69,20 +69,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
-    loaded = true,
-    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  cmp_luasnip = {
+  ["cmp-path"] = {
     loaded = true,
-    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["ctrlp.vim"] = {
     loaded = true,
@@ -104,30 +104,35 @@ _G.packer_plugins = {
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
+  kragle = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/kragle",
+    url = "https://github.com/indeedhat/kragle"
+  },
   ["lightline.vim"] = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/lightline.vim",
     url = "https://github.com/itchyny/lightline.vim"
+  },
+  ["markdown-preview.vim"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/markdown-preview.vim",
+    url = "https://github.com/iamcco/markdown-preview.vim"
   },
   neoterm = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/neoterm",
     url = "https://github.com/itmecho/neoterm.nvim"
   },
-  ["nvim-beep-test"] = {
+  ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/nvim-beep-test",
-    url = "/home/indeedhat/Documents/github/indeedhat/nvim-beep-test"
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-kragle"] = {
-    loaded = true,
-    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/nvim-kragle",
-    url = "/home/indeedhat/Documents/github/indeedhat/nvim-kragle"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -135,7 +140,6 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
@@ -165,10 +169,20 @@ _G.packer_plugins = {
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   ["targets.vim"] = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/targets.vim",
     url = "https://github.com/wellle/targets.vim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["textobj-word-column.vim"] = {
     loaded = true,
@@ -190,6 +204,11 @@ _G.packer_plugins = {
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-ReplaceWithRegister",
     url = "https://github.com/inkarkat/vim-ReplaceWithRegister"
   },
+  ["vim-actionscript"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-actionscript",
+    url = "https://github.com/jeroenbourgois/vim-actionscript"
+  },
   ["vim-blade"] = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-blade",
@@ -204,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-doge",
     url = "/home/indeedhat/Documents/github/vim-doge"
+  },
+  ["vim-easy-align"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -230,11 +254,6 @@ _G.packer_plugins = {
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-solidity",
     url = "https://github.com/tomlion/vim-solidity"
   },
-  ["vim-submode"] = {
-    loaded = true,
-    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-submode",
-    url = "https://github.com/kana/vim-submode"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -259,18 +278,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
     url = "https://github.com/kana/vim-textobj-user"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  vimspector = {
+    loaded = true,
+    path = "/home/indeedhat/.local/share/nvim/site/pack/packer/start/vimspector",
+    url = "https://github.com/puremourning/vimspector"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

@@ -1,4 +1,5 @@
 --
+--
 -- packer config
 --
 
@@ -19,7 +20,6 @@ vim.api.nvim_exec(
 false
 )
 
-
 local use = require('packer').use
 require('packer').startup(function()
     -- Util
@@ -28,7 +28,6 @@ require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-    use 'kana/vim-submode'
     use 'markonm/traces.vim'
     use 'machakann/vim-highlightedyank'
     use '~/Documents/github/vim-doge'
@@ -36,16 +35,27 @@ require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = {'kyazdani42/nvim-tree.lua'},
-        config = function() require'nvim-tree'.setup {} end
+        requires = 'kyazdani42/nvim-web-devicons'
     }
     use 'ctrlpvim/ctrlp.vim'
     use { 'junegunn/fzf', run = './install --bin' }
     use 'inkarkat/vim-ReplaceWithRegister'
     use { 'itmecho/neoterm.nvim', as = 'neoterm' }
+    use 'junegunn/vader.vim'
+    use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    use 'windwp/nvim-autopairs'
+    use 'junegunn/vim-easy-align'
+
+    -- syntax
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
-    use 'junegunn/vader.vim'
+    use 'jeroenbourgois/vim-actionscript'
+    use 'tomlion/vim-solidity'
+    use 'jwalton512/vim-blade'
+    use 'udalov/kotlin-vim'
 
     -- text objects
     use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -57,7 +67,10 @@ require('packer').startup(function()
 
     -- theme
     use { 'dracula/vim', as = 'dracula' }
-    use 'itchyny/lightline.vim' -- Fancier statusline
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     -- use 'lukas-reineke/indent-blankline.nvim'
 
     -- language server
@@ -65,19 +78,31 @@ require('packer').startup(function()
         'neovim/nvim-lspconfig',
         -- commit = "26648bf59ffeef4c4f4848764ce22d74f6235822"
     }-- Collection of configurations for built-in LSP client
+    use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+    -- use 'simrat39/symbols-outline.nvim'
+
+    -- Debugger
+    -- use 'puremourning/vimspector'
 
     -- language specific
     use 'mattn/emmet-vim'
     use 'aeke/vim-php-cs-fixer'
-    use 'tomlion/vim-solidity'
-    use 'jwalton512/vim-blade'
+    use 'iamcco/markdown-preview.vim'
 
     -- My plugins
-    -- use 'indeedhat/kragle'
-    use "~/Documents/github/indeedhat/nvim-kragle"
-    use "~/Documents/github/indeedhat/nvim-beep-test"
+    use 'indeedhat/kragle'
+    -- use "~/Documents/github/indeedhat/nvim-beep-test"
 end)
+
+require'nvim-tree'.setup {
+    git = {
+        enable = true,
+        ignore = false,
+    },
+}
+
+require('nvim-autopairs').setup{}

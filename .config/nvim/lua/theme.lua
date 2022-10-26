@@ -37,6 +37,8 @@ vim.cmd [[
     set expandtab
 
     set clipboard+=unnamedplus
+
+    set scrolloff=6
 ]]
 
 vim.opt.listchars = { space = ".", tab = "┊>", trail = "~" }

@@ -28,7 +28,9 @@ alias vim="nvim"
 alias svim="sudo nvim"
 alias v=nvim
 
+
 # dev things
+alias t=tmux
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
 
 #File system
