@@ -1,0 +1,7 @@
+".config/nvim" => "/home/indeedhat/.config/nvim"
+".config/alacritty" => "/home/indeedhat/.config/alacritty"
+".config/bash" => "/home/indeedhat/.config/bash"
+".config/sway" => "/home/indeedhat/.config/sway"
+".config/waybar" => "/home/indeedhat/.config/waybar"
+".config/tmux" => "/home/indeedhat/.config/tmux"
+".config/wofi" => "/home/indeedhat/.config/wofi"

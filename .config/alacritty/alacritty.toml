@@ -1,0 +1,18 @@
+[font]
+size = 8.5
+
+[font.bold]
+family = "Open Dyslexic MNerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Open Dyslexic MNerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "Open Dyslexic MNerd Font Mono"
+style = "Medium"
+
+[window]
+opacity = 0.98
+dynamic_title = true

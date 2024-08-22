@@ -1,0 +1,4 @@
+shopt -s autocd
+set -o vi
+unset command_not_found_handle
+

@@ -1,0 +1,46 @@
+# Neovim
+alias nano="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias svim="sudo nvim"
+alias v=nvim
+
+alias t=tmux
+
+# dev things
+alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
+
+# File system
+alias ll="ls -alh --color"
+alias du="du -h"
+alias df="df -h"
+
+alias open="xdg-open"
+
+# matt is dumb
+alias :q="exit"
+
+# Better cli
+alias cat="bat -p"
+
+# Github Release
+gh_release_patch()
+{
+    gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 +1 }')
+}
+gh_release_minor()
+{
+    gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.%d.0", $1, $2 +1 }')
+}
+gh_release_major()
+{
+    gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.0.0", $1 +1 }')
+}
+
+alias ghrp=gh_release_patch
+alias ghrm=gh_release_minor
+
+kys()
+{
+    kill $(pidof $1)
+}
