@@ -24,7 +24,7 @@ vim.cmd [[
     set scrolloff=6
 ]]
 
-vim.opt.listchars = { trail = "~" }
+vim.opt.listchars = { tab = "|  ", trail = "~" }
 vim.o.inccommand = 'nosplit'
 
 --Set highlight on search
