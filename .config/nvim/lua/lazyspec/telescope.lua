@@ -12,7 +12,7 @@ return {
 
         local builtin = require('telescope.builtin')
 
-        vim.keymap.set('n', '<C-t>', builtin.find_files, { noremap = true })
+        vim.keymap.set('n', '<C-t>', function() builtin.find_files({ hidden = true }) end, { noremap = true })
         vim.keymap.set('n', '<C-Space>', builtin.buffers, { noremap = true })
         vim.keymap.set('n', '<Leader><C-Space>', builtin.lsp_workspace_symbols, { noremap = true })
         vim.keymap.set('n', '<Leader>qq', builtin.quickfix, { noremap = true })

@@ -94,7 +94,7 @@ cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('
 " Auto Command                                                                    sec-autocommand "
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " save on write
-autocmd InsertLeave * write
+" autocmd InsertLeave * write
 
 " Emmet
 autocmd FileType html,css,php,js EmmetInstall

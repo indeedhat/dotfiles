@@ -5,3 +5,4 @@
 ".config/waybar" => "/home/indeedhat/.config/waybar"
 ".config/tmux" => "/home/indeedhat/.config/tmux"
 ".config/wofi" => "/home/indeedhat/.config/wofi"
+".local/sbin/tmux-sessionizer" => "/home/indeedhat/.local/sbin/tmux-sessionizer"
