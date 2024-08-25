@@ -6,8 +6,12 @@ vim.o.conceallevel = 0
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.gvim_json_syntax_conceal = 0
+
 -- 
 vim.cmd [[
+    set mouse=
+
     set list
 
     highlight ColorColumn ctermbg=16
@@ -76,5 +80,8 @@ return {
     },
     {
         'markonm/traces.vim',
+        config = function()
+            vim.g.traces_num_range_preview = 1
+        end
     }
 }

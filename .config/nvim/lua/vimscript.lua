@@ -3,26 +3,6 @@
 --
 
 vim.cmd [[
-set mouse=
-
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-" Pligin Configuration                                                            sec-plugin-conf "
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-
-" Traces
-let g:traces_num_range_preview = 1
-
-" Json
-let g:vim_json_syntax_conceal = 0
-
-" Emmet
-let g:user_emmet_leader_key=','
-let g:user_emmet_mode='n'
-
-" CtrlP
-let g:ctrlp_show_hidden = 1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.git/*,*/vendor/*,*/node_modules/*
-
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " Functions                                                                          sec-function "
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
@@ -50,39 +30,6 @@ endfunction
 
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-" Macros/Shortcuts                                                                      sec-macro "
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-" CtrlP
-map <C-p> :CtrlP<CR>
-map <C-Space> :CtrlPBuffer<CR>
-
-" Php cs fixer
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
-
-" NvimTree
-nmap <Leader>nt :NvimTreeToggle<CR>
-
-" Line limit
-nnoremap <Leader>ll 120\|
-
-" Arrange args
-nnoremap <silent><Leader>ab :call ArrangeArgs('(', ')')<cr>
-nnoremap <silent><Leader>a( :call ArrangeArgs('(', ')')<cr>
-nnoremap <silent><Leader>a[ :call ArrangeArgs('[', ']')<cr>
-nnoremap <silent><Leader>a{ :call ArrangeArgs('{', '}')<cr>
-
-" Quick list aliases
-nnoremap <Leader>td :Ggrep TODO -- ':(exclude)vendor/'<cr>:copen<cr>
-nnoremap <Leader>fm :Ggrep FIXME -- ':(exclude)vendor/'<cr>:copen<cr>
-
-" Whitespace
-nnoremap <Leader><CR> i<cr><esc>
-nnoremap <Leader><BS> ^d0i<bs><esc>
-
-" Search things
-nnoremap <Leader>gg :Ggrep ''<Left>
-
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " Abbreviations                                                                  sec-abbreviation "
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
@@ -93,8 +40,8 @@ cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " Auto Command                                                                    sec-autocommand "
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
-" save on write
-" autocmd InsertLeave * write
+" Php cs fixer
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 
 " Emmet
 autocmd FileType html,css,php,js EmmetInstall
