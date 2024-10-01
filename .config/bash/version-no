@@ -1,0 +1,13 @@
+#version_inc_patch()
+#{
+#    initial=$1
+#    echo ${initial} | awk -F.
+#}
+#
+#version_inc_minor()
+#{
+#}
+#
+#version_inc_major()
+#{
+#}

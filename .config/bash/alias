@@ -5,10 +5,17 @@ alias vim="nvim"
 alias svim="sudo nvim"
 alias v=nvim
 
+# tmux
 alias t=tmux
+ta()
+{
+    session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' 2>/dev/null | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
+    tmux attach -t ${session} 2> /dev/null || tmux
+}
 
 # dev things
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
+alias k=kubectl
 
 # File system
 alias ll="ls -alh --color"
@@ -22,6 +29,8 @@ alias :q="exit"
 
 # Better cli
 alias cat="bat -p"
+
+alias box="distrobox"
 
 # Github Release
 gh_release_patch()
@@ -40,7 +49,24 @@ gh_release_major()
 alias ghrp=gh_release_patch
 alias ghrm=gh_release_minor
 
-kys()
+alias cd-ignite="cd ~/Documents/github/ignite/services"
+
+ignite()
 {
-    kill $(pidof $1)
+    pushd ${HOME}/Documents/github/ignite
+    ./bin/console "$@"
+    popd
 }
+
+cdignite()
+{
+    P="${HOME}/Documents/github/ignite/services"
+
+    if [ $# -ne 0 ]; then
+        P="${P}/stride.svc.${1}"
+    fi
+
+    cd $P
+}
+
+alias console=./bin/console

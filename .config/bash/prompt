@@ -1,8 +1,8 @@
-# echo -e '    ____          __              ____          __'
-# echo -e '   /  _/___  ____/ /__  ___  ____/ / /_  ____ _/ /_'
-# echo -e '   / // __ \/ __  / _ \/ _ \/ __  / __ \/ __ `/ __/'
-# echo -e ' _/ // / / / /_/ /  __/  __/ /_/ / / / / /_/ / /_'
-# echo -e '/___/_/ /_/\__,_/\___/\___/\__,_/_/ /_/\__,_/\__/'
+echo -e '    ____          __              ____          __'
+echo -e '   /  _/___  ____/ /__  ___  ____/ / /_  ____ _/ /_'
+echo -e '   / // __ \/ __  / _ \/ _ \/ __  / __ \/ __ `/ __/'
+echo -e ' _/ // / / / /_/ /  __/  __/ /_/ / / / / /_/ / /_'
+echo -e '/___/_/ /_/\__,_/\___/\___/\__,_/_/ /_/\__,_/\__/'
 
 _ps_git_branch() {
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
@@ -48,6 +48,15 @@ _ps_go_work_def() {
     echo "$(_ps_method GoWorkspace "$WORK")"
 }
 
+_ps_venv_def() {
+    if [[ -z "${VIRTUAL_ENV}" ]]; then
+        echo ''
+        return 0
+    fi
+
+    echo "$(_ps_method PythonVenv "${VIRTUAL_ENV}")"
+}
+
 _ps_string() {
     echo "\[\e[36m\]\"${1}\"\[\e[0m\]"
 }
@@ -65,7 +74,7 @@ _ps_symbol() {
 }
 
 _ps_build() {
-    PS1="\n\u$(_ps_method Dir '\w' true)$(_ps_git_branch)$(_ps_podctl_def)$(_ps_go_work_def)$(_ps_go_mod_def)\n\[\e[0m\]"
+    PS1="\n\u$(_ps_method Dir '\w' true)$(_ps_venv_def)$(_ps_git_branch)$(_ps_podctl_def)$(_ps_go_work_def)$(_ps_go_mod_def)\n\[\e[0m\]"
 }
 
 PROMPT_COMMAND='echo -ne "\033]0;$(basename ${PWD})\007" && _ps_build'
