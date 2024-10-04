@@ -61,7 +61,7 @@ return {
                 'julials',
                 'lua_ls',
                 'ocamllsp',
-                'intelephense',
+                -- 'intelephense',
                 'phpactor',
                 'pyright',
                 'rust_analyzer',
