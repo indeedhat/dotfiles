@@ -70,7 +70,7 @@ return {
                 'templ',
                 'terraform_lsp',
                 'terraformls',
-                'tsserver',
+                'ts_ls',
                 'volar',
             }
             for _, lsp in ipairs(servers) do

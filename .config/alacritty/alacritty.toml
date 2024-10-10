@@ -1,5 +1,9 @@
+import = [
+    "base16-default-dark.toml"
+]
+
 [font]
-size = 9.5
+size = 10
 
 [font.bold]
 family = "Open Dyslexic MNerd Font Mono"
