@@ -1,4 +1,5 @@
-vim.o.termguicolors = true
+-- vim.o.termguicolors = true
+-- vim.cmd.colorscheme("default")
 
 vim.o.conceallevel = 0
 
@@ -14,8 +15,9 @@ vim.cmd [[
 
     set list
 
+    highlight ColorLine ctermbg=16
     highlight ColorColumn ctermbg=16
-    set cursorline
+    "set cursorline
     set colorcolumn=120,100
 
     filetype plugin indent on
@@ -42,8 +44,8 @@ vim.wo.relativenumber = true
 vim.o.breakindent = true
 
 local highlight = {
-    "CursorColumn",
-    "Whitespace",
+    "CursorLine",
+    -- "Whitespace",
 }
 
 return {
@@ -57,12 +59,24 @@ return {
     {
         "vague2k/vague.nvim",
         config = function()
-            vim.cmd.colorscheme("vague")
-            require("vague").setup({})
+            -- vim.cmd.colorscheme("vague")
+            -- require("vague").setup({})
         end
     },
     {
         'itchyny/lightline.vim'
+    },
+    {
+        'jeffkreeftmeijer/vim-dim',
+        config = function()
+            -- vim.cmd.colorscheme("dim")
+        end
+    },
+    {
+        'chriskempson/base16-vim',
+        config = function()
+            vim.cmd.colorscheme("base16-default-dark")
+        end
     },
     {
         'machakann/vim-highlightedyank',

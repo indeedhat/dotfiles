@@ -23,5 +23,6 @@ return {
         vim.keymap.set('n', '<Leader><C-Space>', builtin.lsp_workspace_symbols, { noremap = true })
         vim.keymap.set('n', '<Leader>qq', builtin.quickfix, { noremap = true })
         vim.keymap.set('n', '<Leader>qh', builtin.quickfixhistory, { noremap = true })
+        vim.keymap.set('n', '<Leader>gf', builtin.live_grep, { noremap = true })
     end
 }

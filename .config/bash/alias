@@ -6,6 +6,8 @@ alias svim="sudo nvim"
 alias v=nvim
 
 alias t=tmux
+alias k=kubectl
+alias sesh=tmux-sessionizer
 
 # dev things
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
@@ -39,6 +41,10 @@ gh_release_major()
 
 alias ghrp=gh_release_patch
 alias ghrm=gh_release_minor
+
+cd() {
+    builtin cd "$@" && automux 
+}
 
 kys()
 {
