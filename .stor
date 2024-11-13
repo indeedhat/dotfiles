@@ -7,3 +7,4 @@
 ".config/wofi" => "/home/indeedhat/.config/wofi"
 ".local/sbin/tmux-sessionizer" => "/home/indeedhat/.local/sbin/tmux-sessionizer"
 ".bashrc" => "/home/indeedhat/.bashrc"
+".config/phpactor" => "/home/indeedhat/.config/phpactor"

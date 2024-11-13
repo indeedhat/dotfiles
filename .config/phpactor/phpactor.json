@@ -1,0 +1,7 @@
+{
+    "language_server.php_stan.enabled": true,
+    "language_server_php_cs_fixer.enabled": true,
+    "language_server_php_cs_fixer.bin": "~/.config/composer/vendor/bin/php-cs-fixer",
+    "indexer.exclude_patterns": ["/vendor/**/Tests/**/*","/vendor/**/tests/**/*","/var/cache/**/*","/vendor/composer/**/*"],
+    "language_server.diagnostics_on_update": false
+}

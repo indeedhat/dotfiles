@@ -26,7 +26,7 @@ local on_attach = function(_, bufnr)
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
-vim.api.nvim_command[[autocmd BufWritePre *.go lua vim.lsp.buf.format()]]
+vim.api.nvim_command[[autocmd BufWritePre *.go,*.php lua vim.lsp.buf.format()]]
 vim.api.nvim_command[[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]]
 
 return {

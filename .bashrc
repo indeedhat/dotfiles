@@ -41,3 +41,5 @@ export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 alias luamake=/home/phpmatt/Documents/github/dev-tools/lua-language-server/3rd/luamake/luamake
 
 source /usr/share/nvm/init-nvm.sh
+
+eval "$(fzf --bash)"

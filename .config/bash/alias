@@ -5,9 +5,18 @@ alias vim="nvim"
 alias svim="sudo nvim"
 alias v=nvim
 
-alias t=tmux
 alias k=kubectl
+
+# tmux things
+alias t=tmux
 alias sesh=tmux-sessionizer
+:qa() {
+    if [ -n "$TMUX" ]; then
+        tmux kill-session
+    else
+        exit
+    fi
+}
 
 # dev things
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
@@ -50,3 +59,4 @@ kys()
 {
     kill $(pidof $1)
 }
+
