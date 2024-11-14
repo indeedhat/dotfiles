@@ -6,3 +6,4 @@
 ".config/tmux" => "/home/indeedhat/.config/tmux"
 ".config/wofi" => "/home/indeedhat/.config/wofi"
 ".local/sbin/tmux-sessionizer" => "/home/indeedhat/.local/sbin/tmux-sessionizer"
+".bashrc" => "/home/matth/.bashrc"
