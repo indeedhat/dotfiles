@@ -17,7 +17,7 @@ vim.cmd [[
 
     highlight ColorLine ctermbg=16
     highlight ColorColumn ctermbg=16
-    "set cursorline
+    set cursorline
     set colorcolumn=120,100
 
     filetype plugin indent on

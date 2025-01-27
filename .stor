@@ -7,3 +7,5 @@
 ".config/wofi" => "/home/indeedhat/.config/wofi"
 ".local/sbin/tmux-sessionizer" => "/home/indeedhat/.local/sbin/tmux-sessionizer"
 ".bashrc" => "/home/matth/.bashrc"
+".config/gtk-3.0" => "/home/matth/.config/gtk-3.0"
+".config/gtk-4.0" => "/home/matth/.config/gtk-4.0"

@@ -1,7 +1,3 @@
-import = [
-    "base16-default-dark.toml"
-]
-
 [font]
 size = 10
 
@@ -20,3 +16,8 @@ style = "Medium"
 [window]
 opacity = 0.98
 dynamic_title = true
+
+[general]
+import = [
+    "base16-default-dark.toml"
+]

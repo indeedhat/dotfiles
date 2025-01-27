@@ -7,6 +7,8 @@ alias v=nvim
 
 # tmux
 alias t=tmux
+alias sesh=tmux-sessionizer
+alias tkill=tmux-session-kill
 ta()
 {
     session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' 2>/dev/null | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
@@ -16,6 +18,7 @@ ta()
 # dev things
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
 alias k=kubectl
+alias kex=kubectl-exec
 
 # File system
 alias ll="ls -alh --color"
@@ -45,6 +48,7 @@ gh_release_major()
 {
     gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.0.0", $1 +1 }')
 }
+alias g=git
 
 alias ghrp=gh_release_patch
 alias ghrm=gh_release_minor
