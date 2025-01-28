@@ -16,6 +16,7 @@
 
     "modules-right": [
         "idle_inhibitor",
+        "custom/keyspeed",
         "memory",
         "cpu",
         "temperature",
@@ -31,6 +32,11 @@
     ],
 
     // Modules
+
+    "custom/keyspeed": {
+        "exec": "sudo /home/matth/go/bin/keyspeed -b -d /dev/input/by-id/usb-foostan_Corne-event-kbd",
+        "format": "⌨ {}"
+    },
 
     "idle_inhibitor": {
         "format": "{icon}",
