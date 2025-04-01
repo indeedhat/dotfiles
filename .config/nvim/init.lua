@@ -13,3 +13,6 @@ vim.opt.swapfile = false
 --Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_gb" }

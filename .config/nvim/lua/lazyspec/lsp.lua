@@ -39,21 +39,16 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
+            -- 'hrsh7th/nvim-cmp',
+            -- 'hrsh7th/cmp-path',
+            -- 'hrsh7th/cmp-nvim-lsp',
+            -- 'hrsh7th/cmp-vsnip',
+            -- 'hrsh7th/vim-vsnip',
+            'saghen/blink.cmp',
             'sago35/tinygo.vim',
         },
-        config = function()
-            vim.o.completeopt = 'menu,menuone,noselect'
-
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-            local nvim_lsp = require 'lspconfig'
-            local servers = {
+        opts = {
+            servers = {
                 'clangd',
                 'eslint',
                 'gopls',
@@ -61,8 +56,8 @@ return {
                 'julials',
                 'lua_ls',
                 'ocamllsp',
-                -- 'intelephense',
                 'phpactor',
+                -- 'inteliphense',
                 'pyright',
                 'rust_analyzer',
                 'solargraph',
@@ -71,15 +66,25 @@ return {
                 'terraform_lsp',
                 'terraformls',
                 'ts_ls',
-                'volar',
+                'volar'
             }
-            for _, lsp in ipairs(servers) do
-                nvim_lsp[lsp].setup {
+        },
+        config = function(_, opts)
+            vim.o.completeopt = 'menu,menuone,noselect'
+            local nvim_lsp = require('lspconfig')
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+            -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+            for _, server in ipairs(opts.servers) do
+                nvim_lsp[server].setup({
                     on_attach = on_attach,
-                    capabilities = capabilities,
-                }
+                    capabilities = capabilities
+                })
             end
 
+            --[[
             local cmp = require('cmp')
             cmp.setup {
                 snippet = {
@@ -110,6 +115,35 @@ return {
 
                 preselect = cmp.PreselectMode.None,
             }
+            ]]
         end
+    },
+    {
+        'saghen/blink.cmp',
+        -- optional: provides snippets for the snippet source
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        -- use a release tag to download pre-built binaries
+        version = '1.*',
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            keymap = { preset = 'enter' },
+            appearance = {
+                nerd_font_variant = 'mono'
+            },
+            completion = {
+                keyword = { range = 'full' },
+                ghost_text = { enabled = true },
+                documentation = { auto_show = true }
+            },
+            sources = {
+                default = { 'lsp', 'path', 'snippets' }, -- , 'buffer' },
+            },
+            signature = {
+                enabled = true,
+                window = { show_documentation = true }
+            }
+        },
+        opts_extend = { "sources.default" }
     }
 }
