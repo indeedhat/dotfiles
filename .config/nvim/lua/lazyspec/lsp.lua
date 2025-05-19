@@ -141,7 +141,10 @@ return {
             },
             signature = {
                 enabled = true,
-                window = { show_documentation = true }
+                window = {
+                    show_documentation = true,
+                    direction_priority = { 's', 'n' }
+                }
             }
         },
         opts_extend = { "sources.default" }

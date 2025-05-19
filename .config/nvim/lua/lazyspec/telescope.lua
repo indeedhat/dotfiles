@@ -24,5 +24,6 @@ return {
         vim.keymap.set('n', '<Leader>qq', builtin.quickfix, { noremap = true })
         vim.keymap.set('n', '<Leader>qh', builtin.quickfixhistory, { noremap = true })
         vim.keymap.set('n', '<Leader>gf', builtin.live_grep, { noremap = true })
+        vim.keymap.set('n', '<Leader>gg', builtin.live_grep, { noremap = true })
     end
 }

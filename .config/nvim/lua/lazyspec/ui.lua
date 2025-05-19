@@ -11,6 +11,7 @@ vim.gvim_json_syntax_conceal = 0
 
 -- 
 vim.cmd [[
+    set termguicolors
     set mouse=
 
     set list
@@ -18,7 +19,7 @@ vim.cmd [[
     highlight ColorLine ctermbg=16
     highlight ColorColumn ctermbg=16
     set cursorline
-    set colorcolumn=120,100
+    set colorcolumn=100,80
 
     filetype plugin indent on
     set tabstop=4
@@ -73,9 +74,12 @@ return {
         end
     },
     {
-        'chriskempson/base16-vim',
+        'RRethy/base16-nvim',
         config = function()
             vim.cmd.colorscheme("base16-default-dark")
+            -- vim.cmd([[
+            --     highlight PmenuSele guibg=NvimDarkGrey4
+            -- ]])
         end
     },
     {
