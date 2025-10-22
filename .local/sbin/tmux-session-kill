@@ -1,0 +1,9 @@
+#!/bin/bash
+
+session=$(tmux ls | cut -d':' -f 1 | fzf)
+
+if [ -z "${session}" ]; then
+    exit 0
+fi
+
+tmux kill-session -t ${session}

@@ -57,7 +57,7 @@ return {
                 'lua_ls',
                 'ocamllsp',
                 'phpactor',
-                -- 'inteliphense',
+                -- 'intelephense',
                 'pyright',
                 'rust_analyzer',
                 'solargraph',

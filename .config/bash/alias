@@ -19,6 +19,7 @@ ta()
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
 alias k=kubectl
 alias kex=kubectl-exec
+alias klog=kubectl-logs
 
 # File system
 alias ll="ls -alh --color"
@@ -79,3 +80,15 @@ json()
 {
     wl-paste | jq "$@"
 }
+
+yaml()
+{
+    wl-paste | yq "$@"
+}
+
+jwt()
+{
+    wl-paste | jq -R 'split(".") | .[1] | @base64d | fromjson'
+}
+
+alias vpn_login="forticlient vpn connect TCG-VPN-PRIMARY -u mholmes"

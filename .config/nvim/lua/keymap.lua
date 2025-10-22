@@ -40,7 +40,7 @@ vim.keymap.set('n', '<Leader>lR', ':LspRestart<CR>', { noremap = true })
 vim.keymap.set('n', '<Leader>li', ':LspInfo<CR>', { noremap = true })
 
 -- jump to line limit
-vim.keymap.set('n', '<Leader>ll', '120|', { noremap = true })
+vim.keymap.set('n', '<Leader>ll', '100|', { noremap = true })
 
 -- Quick list aliases
 vim.keymap.set('n', '<Leader>td', ":Ggrep TODO -- ':(exclude)vendor/'<cr>:copen<cr>", { noremap = true })

@@ -16,3 +16,5 @@ vim.wo.signcolumn = 'yes'
 
 vim.opt.spell = true
 vim.opt.spelllang = { "en_gb" }
+
+vim.wo.wrap = false

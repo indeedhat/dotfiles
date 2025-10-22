@@ -17,11 +17,12 @@
     "modules-right": [
         "idle_inhibitor",
         "custom/keyspeed",
+        "custom/uptime",
         "memory",
         "cpu",
         "temperature",
         "disk",
-        "custom/keyboard-layout",
+        //"custom/keyboard-layout",
         "pulseaudio",
         "backlight#value",
         "battery",
@@ -36,6 +37,10 @@
     "custom/keyspeed": {
         "exec": "sudo /home/matth/go/bin/keyspeed -b -d /dev/input/by-id/usb-foostan_Corne-event-kbd",
         "format": "⌨ {}"
+    },
+    "custom/uptime": {
+        "exec": "uptime | awk '{ print $3 }'",
+        "format": "up {}"
     },
 
     "idle_inhibitor": {
