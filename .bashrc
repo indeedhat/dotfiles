@@ -1,3 +1,6 @@
+
+[[ $- != *i* ]] && return
+
 # global import boringness
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc

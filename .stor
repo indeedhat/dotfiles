@@ -8,3 +8,4 @@
 ".local/sbin/tmux-sessionizer" => "/home/indeedhat/.local/sbin/tmux-sessionizer"
 ".bashrc" => "/home/indeedhat/.bashrc"
 ".config/phpactor" => "/home/indeedhat/.config/phpactor"
+".config/hyper" => "/home/indeedhat/.config/hypr"

@@ -7,8 +7,8 @@
     //"height": 30,
 
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
+        "hyprland/workspaces",
+        "hyprland/mode",
     ],
  
     "modules-center": [
