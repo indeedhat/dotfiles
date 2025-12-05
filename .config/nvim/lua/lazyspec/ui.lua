@@ -7,6 +7,8 @@ vim.o.conceallevel = 0
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.winborder = 'rounded'
+
 vim.gvim_json_syntax_conceal = 0
 
 -- 
@@ -77,6 +79,8 @@ return {
         'RRethy/base16-nvim',
         config = function()
             vim.cmd.colorscheme("base16-default-dark")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
             -- vim.cmd([[
             --     highlight PmenuSele guibg=NvimDarkGrey4
             -- ]])

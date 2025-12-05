@@ -1,0 +1,21 @@
+#!/bin/bash
+
+pick=$(kubectl get svc -o json | jq -r '
+  .items[]
+  | .metadata.name as $name
+  | .spec.ports[]
+  | "\($name)\t\(.port)\t(\(.name))"
+' | column -t | fzf)
+
+if [ -z "${pick}" ]; then
+    exit 0
+fi
+
+read svc port _ <<< "${pick}"
+
+bindPort=$1
+if [ -z $bindPort ]; then
+    bindPort=$port
+fi
+
+kubectl port-forward svc/$svc $bindPort:$port

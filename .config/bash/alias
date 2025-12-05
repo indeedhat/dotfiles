@@ -20,6 +20,8 @@ alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
 alias k=kubectl
 alias kex=kubectl-exec
 alias klog=kubectl-logs
+alias kpo=kubectl-port-forward
+alias kdr=kubectl-deployment-restart
 
 # File system
 alias ll="ls -alh --color"

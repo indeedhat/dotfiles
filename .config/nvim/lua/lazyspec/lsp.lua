@@ -39,18 +39,13 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            -- 'hrsh7th/nvim-cmp',
-            -- 'hrsh7th/cmp-path',
-            -- 'hrsh7th/cmp-nvim-lsp',
-            -- 'hrsh7th/cmp-vsnip',
-            -- 'hrsh7th/vim-vsnip',
             'saghen/blink.cmp',
             'sago35/tinygo.vim',
         },
         opts = {
             servers = {
-                'clangd',
-                'eslint',
+                -- 'clangd',
+                -- 'eslint',
                 'gopls',
                 'html',
                 'julials',
@@ -66,56 +61,27 @@ return {
                 'terraform_lsp',
                 'terraformls',
                 'ts_ls',
-                'volar'
+                'vue_ls',
+                'regols'
             }
         },
         config = function(_, opts)
             vim.o.completeopt = 'menu,menuone,noselect'
-            local nvim_lsp = require('lspconfig')
+            -- local nvim_lsp = require('lspconfig')
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             -- local capabilities = vim.lsp.protocol.make_client_capabilities()
             -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
             for _, server in ipairs(opts.servers) do
-                nvim_lsp[server].setup({
+                vim.lsp.enable(server)
+                vim.lsp.config(server, {
                     on_attach = on_attach,
                     capabilities = capabilities
                 })
             end
 
-            --[[
-            local cmp = require('cmp')
-            cmp.setup {
-                snippet = {
-                    expand = function(args)
-                        vim.fn['vsnip#anonymous'](args.body)
-                    end,
-                },
-                mapping = {
-                    ['<C-p>'] = cmp.mapping.select_prev_item(),
-                    ['<C-n>'] = cmp.mapping.select_next_item(),
-                    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.close(),
-                    ['<CR>'] = cmp.mapping.confirm {
-                        select = true,
-                    },
-                },
-                sources = cmp.config.sources {
-                    { name = 'nvim_lsp' },
-                    { name = "vsnip" },
-                    { name = "buffer" },
-                    { name = "path" },
-                },
-                experimental = {
-                    ghost_text = true,
-                },
-
-                preselect = cmp.PreselectMode.None,
-            }
-            ]]
+            vim.lsp.config['regols'].root_dir = vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
         end
     },
     {

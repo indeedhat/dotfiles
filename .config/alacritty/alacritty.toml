@@ -14,7 +14,7 @@ family = "Open Dyslexic MNerd Font Mono"
 style = "Medium"
 
 [window]
-opacity = 0.98
+opacity = 0.97
 dynamic_title = true
 
 [general]

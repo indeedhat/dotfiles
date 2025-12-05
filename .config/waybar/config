@@ -12,12 +12,13 @@
     ],
  
     "modules-center": [
+        "clock"
     ],
 
     "modules-right": [
         "idle_inhibitor",
         "custom/keyspeed",
-        "custom/uptime",
+        //"custom/uptime",
         "memory",
         "cpu",
         "temperature",
@@ -26,10 +27,9 @@
         "pulseaudio",
         "backlight#value",
         "battery",
-        "clock",
-        "tray",
+        "tray"
         //"custom/weather",
-        "custom/power",
+        //"custom/power",
     ],
 
     // Modules
@@ -57,9 +57,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -79,7 +79,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
+        "format": " {usage}%", // Icon: microchip
         "states": {
             "warning": 70,
             "critical": 90,
@@ -90,8 +90,8 @@
      "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
         "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C ",
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
         "interval": 2
       },
 
@@ -138,11 +138,11 @@
 
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": "婢 {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -186,6 +186,6 @@
 
     "disk": {
         "interval": 30,
-        "format": "{used}/{total}",
+        "format": " {percentage_used}%",
     }
 }

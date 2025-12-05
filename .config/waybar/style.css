@@ -15,7 +15,7 @@ Arc-Dark Color Scheme
 */
 @define-color highlight #5294e2 ;
 @define-color base1  #404552 ;
-@define-color background #584B63;
+@define-color background #422e54;
 
 @keyframes blink-warning {
     70% {
@@ -58,8 +58,8 @@ Arc-Dark Color Scheme
 /* The whole bar */
 #waybar {
     background: transparent;
-    color: #bebebe;
-    background-color: @base1;
+    color: #b4b3b5;
+    /*background-color: @base1;*/
     font-family: UbuntuMono;
     font-size: 16px;
 }
@@ -84,9 +84,17 @@ Arc-Dark Color Scheme
 #disk,
 #custom-PBPbattery {
     padding: 0px 10px;
+    /* background: @background; */
+    /* border-radius: 10px; */
+    /* margin: 2px 10px 0 10px; */
+}
+
+.modules-right,
+.modules-center {
+    padding: 0px 10px;
     background: @background;
-    border-radius: 3px;
-    margin: 1px 4px;
+    border-radius: 10px;
+    margin: 2px 10px 0 10px;
 }
 
 /* -----------------------------------------------------------------------------
