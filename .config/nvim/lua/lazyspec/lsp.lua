@@ -62,7 +62,8 @@ return {
                 'terraformls',
                 'ts_ls',
                 'vue_ls',
-                'regols'
+                'regols',
+                'ruby_lsp'
             }
         },
         config = function(_, opts)

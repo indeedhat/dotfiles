@@ -15,7 +15,7 @@ Arc-Dark Color Scheme
 */
 @define-color highlight #5294e2 ;
 @define-color base1  #404552 ;
-@define-color background #422e54;
+@define-color background rgba(66, 46, 84, 0.7); /*#422e54;*/
 
 @keyframes blink-warning {
     70% {
@@ -57,6 +57,7 @@ Arc-Dark Color Scheme
 
 /* The whole bar */
 #waybar {
+    /**background: rgba(255,255,255,0.1);*/
     background: transparent;
     color: #b4b3b5;
     /*background-color: @base1;*/
@@ -187,7 +188,7 @@ Arc-Dark Color Scheme
     /* margin-bottom: 0px; */
     /* padding:0px; */
 
-    background: #413A47;
+    background: rgba(65, 58, 71, 0.7);
     border-radius: 3px;
     margin: 1px 4px;
     color: #ABABAB;
