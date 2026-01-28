@@ -1,6 +1,6 @@
 #!/bin/bash
 
-session=$(tmux ls | cut -d':' -f 1 | fzf)
+session=$(tmux ls | cut -d':' -f 1 | fzf --header "Kill tmux session")
 
 if [ -z "${session}" ]; then
     exit 0

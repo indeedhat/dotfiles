@@ -5,7 +5,7 @@ pick=$(kubectl get svc -o json | jq -r '
   | .metadata.name as $name
   | .spec.ports[]
   | "\($name)\t\(.port)\t(\(.name))"
-' | column -t | fzf)
+' | column -t | fzf --header "Forward Port")
 
 if [ -z "${pick}" ]; then
     exit 0

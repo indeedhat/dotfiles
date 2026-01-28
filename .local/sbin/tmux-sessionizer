@@ -25,7 +25,16 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     # Replace the folliwing find command with the directories you want to be scanned
-    selected=$(find ~/Documents/github/ ~/Documents/github/composer-packages/  ~/Documents/github/indeedhat ~/Documents/github/ignite/services/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(\
+        find ~/Documents/github/ \
+            ~/Documents/github/composer-packages/ \
+            ~/Documents/github/indeedhat \
+            ~/Documents/github/ignite/services/ \
+            -mindepth 1 \
+            -maxdepth 1 \
+            -type d \
+            | fzf --header "Open tmux session" \
+        )
 fi
 
 if [[ -z $selected ]]; then

@@ -1,5 +1,5 @@
 #!/bin/bash
-pick=$(kubectl get pod | grep Running | cut -d ' ' -f 1 | fzf)
+pick=$(kubectl get pod | grep Running | cut -d ' ' -f 1 | fzf --header "Follow Pod Logs")
 if [ -z "${pick}" ]; then
     exit 0
 fi

@@ -9,3 +9,4 @@
 ".config/gtk-3.0" => "/home/matth/.config/gtk-3.0"
 ".config/gtk-4.0" => "/home/matth/.config/gtk-4.0"
 ".local/sbin" => "/home/matth/.local/sbin"
+".config/phpactor" => "/home/matth/.config/phpactor"

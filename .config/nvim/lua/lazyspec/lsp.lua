@@ -44,16 +44,14 @@ return {
         },
         opts = {
             servers = {
-                -- 'clangd',
-                -- 'eslint',
+                'eslint',
                 'gopls',
                 'html',
                 'julials',
                 'lua_ls',
                 'ocamllsp',
                 'phpactor',
-                -- 'intelephense',
-                'pyright',
+                'basedpyright',
                 'rust_analyzer',
                 'solargraph',
                 'svelte',
@@ -62,17 +60,14 @@ return {
                 'terraformls',
                 'ts_ls',
                 'vue_ls',
+                'vtsls',
                 'regols',
                 'ruby_lsp'
             }
         },
         config = function(_, opts)
             vim.o.completeopt = 'menu,menuone,noselect'
-            -- local nvim_lsp = require('lspconfig')
             local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-            -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
             for _, server in ipairs(opts.servers) do
                 vim.lsp.enable(server)

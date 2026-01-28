@@ -53,6 +53,21 @@ local highlight = {
 
 return {
     {
+        "binhtran432k/dracula.nvim",
+        name = "dracula",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            require("dracula").setup({
+                transparent_bg = true,
+                italic_comment = true,
+                overrides = {},
+            })
+            -- vim.cmd.colorscheme("dracula")
+        end
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         main = 'ibl',
         opts = {

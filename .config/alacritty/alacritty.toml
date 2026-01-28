@@ -1,5 +1,6 @@
 [font]
-size = 10
+size = 11
+offset.y = 1
 
 [font.bold]
 family = "Open Dyslexic MNerd Font Mono"
