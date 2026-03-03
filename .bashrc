@@ -33,11 +33,6 @@ export PATH="$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH"
 complete -C /home/phpmatt/go/bin/gocomplete go
 complete -C /home/phpmatt/go/bin/podctl podctl
 
-export http_proxy=''
-export https_proxy=''
-export ftp_proxy=''
-export socks_proxy=''
-
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 

@@ -48,6 +48,16 @@ gh_release_major()
     gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.0.0", $1 +1 }')
 }
 
+gh_clone()
+{
+    cd ~/projects
+    git clone git@github.com:$1
+    if [ $? -eq 1 ]; then
+        cd ${1##*/}
+        nvim
+    fi
+}
+
 alias ghrp=gh_release_patch
 alias ghrm=gh_release_minor
 
@@ -60,3 +70,4 @@ kys()
     kill $(pidof $1)
 }
 
+alias iwdfix="sudo systemctl restart iwd"

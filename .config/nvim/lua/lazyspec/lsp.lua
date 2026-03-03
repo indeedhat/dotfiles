@@ -80,6 +80,12 @@ return {
                 }
             end
 
+            nvim_lsp['elixirls'].setup {
+                cmd = { "elixir-ls" },
+                on_attach = on_attach,
+                capabilities = capabilities,
+            }
+
             local cmp = require('cmp')
             cmp.setup {
                 snippet = {

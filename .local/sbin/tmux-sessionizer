@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # Stolen from ThePrimeagen's dotfiles and updated to use automux
 
@@ -6,20 +6,15 @@
 #     to work out the proper issue #monkey-patch
 export TERM=xterm-256color
 
-if [[ $# -eq 1 ]]; then
-    selected=$1
-else
-    selected=$(find ~/projects  ~/projects/indeedhat -mindepth 1 -maxdepth 1 -type d | fzf)
-fi
-
+selected=$(find ~/projects  ~/projects/indeedhat -mindepth 1 -maxdepth 1 -type d | fzf -q "${1}")
 if [[ -z $selected ]]; then
     exit 0
 fi
 
 tmux_running=$(pgrep tmux)
 use_automux=1
-selected_name=$(automux -print-name "$selected/.automux.hcl" | tr . _)
-echo $selected_name
+selected_name=$(automux print-name "$selected/.automux" | tr . _)
+
 if [[ -z $selected_name ]]; then
     unset use_automux
     selected_name=$(basename "$selected" | tr . _)
@@ -29,7 +24,7 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     if [[ -z $use_automux ]]; then
         tmux new-session -s $selected_name -c $selected
     else
-        automux $selected/.automux.hcl
+        automux $selected/.automux
     fi
 
     exit 0
@@ -39,11 +34,11 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
     if [[ -z $use_automux ]]; then
         tmux new-session -ds $selected_name -c $selected
     else
-        automux -d "$selected/.automux.hcl"
+        automux -d "$selected/.automux"
     fi
 fi
 
-if [[ -z $TMUX ]]; then 
+if [[ -z $TMUX ]]; then
     tmux attach -t="$selected_name"
 else
     tmux switch-client -t="$selected_name"

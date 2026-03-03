@@ -76,6 +76,10 @@ return {
         'chriskempson/base16-vim',
         config = function()
             vim.cmd.colorscheme("base16-default-dark")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
         end
     },
     {
