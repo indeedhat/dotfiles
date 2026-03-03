@@ -57,6 +57,7 @@ Arc-Dark Color Scheme
 
 /* The whole bar */
 #waybar {
+    /**background: rgba(255,255,255,0.1);*/
     background: transparent;
     color: #b4b3b5;
     /*background-color: @base1;*/
@@ -187,7 +188,7 @@ Arc-Dark Color Scheme
     /* margin-bottom: 0px; */
     /* padding:0px; */
 
-    background: #413A47;
+    background: rgba(65, 58, 71, 0.7);
     border-radius: 3px;
     margin: 1px 4px;
     color: #ABABAB;

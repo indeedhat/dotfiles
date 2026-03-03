@@ -1,6 +1,21 @@
 #!/bin/bash
 
-# Stolen from ThePrimeagen's dotfiles and updated to use automux
+# Taken from ThePrimeagen's dotfiles and updated to work with automux
+#
+# Depends:
+# - automux
+# - fzf
+#
+# Usage:
+# Copy the script to somewhere in your path, make it executable and run it
+# ```
+# cp scripts/tmux-sessionizer ~/.local/sbin
+# chmod u+x ~/.local/sbin/tmux-sessionizer
+# tmux-sessionizer
+# ```
+#
+# My tmux binding:
+# bind-key T run 'tmux neww ~/.local/sbin/tmux-sessionizer'
 
 # NB: this fixes some bizzar bug where $TERM doesn't get set in the session and i can't be bothered
 #     to work out the proper issue #monkey-patch

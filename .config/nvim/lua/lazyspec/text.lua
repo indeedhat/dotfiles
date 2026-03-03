@@ -14,8 +14,15 @@ return {
     {
         'wellle/targets.vim'
     },
+--    {
+--        'inkarkat/vim-ReplaceWithRegister'
+--    },
     {
-        'inkarkat/vim-ReplaceWithRegister'
+        'echasnovski/mini.operators',
+        version = '*',
+        config = function()
+            require('mini.operators').setup()
+        end
     },
     {
         'windwp/nvim-autopairs',

@@ -39,29 +39,26 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = t
 vim.keymap.set('n', '<Leader>lR', ':LspRestart<CR>', { noremap = true })
 vim.keymap.set('n', '<Leader>li', ':LspInfo<CR>', { noremap = true })
 
+-- jump to line limit
+vim.keymap.set('n', '<Leader>ll', '100|', { noremap = true })
+
+-- Quick list aliases
+vim.keymap.set('n', '<Leader>td', ":Ggrep TODO -- ':(exclude)vendor/'<cr>:copen<cr>", { noremap = true })
+vim.keymap.set('n', '<Leader>fm', ":Ggrep FIXME -- ':(exclude)vendor/'<cr>:copen<cr>", { noremap = true })
+
+-- Whitespace
+vim.keymap.set('n', '<Leader><CR>', 'i<cr><esc>', { noremap = true })
+vim.keymap.set('n', '<Leader><BS>', "^d0i<bs><esc>", { noremap = true })
+
+-- Arrange args
+vim.keymap.set('n', '<Leader>ab', ":call ArrangeArgs('(', ')')<cr>", { noremap = true })
+vim.keymap.set('n', '<Leader>a(', ":call ArrangeArgs('(', ')')<cr>", { noremap = true })
+vim.keymap.set('n', '<Leader>a[', ":call ArrangeArgs('[', ']')<cr>", { noremap = true })
+vim.keymap.set('n', '<Leader>a{', ":call ArrangeArgs('{', '}')<cr>", { noremap = true })
+
 -- create a jump list entry when moving multiple lines 
 vim.cmd [[
     nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
     nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
-
-    " Line limit
-    nnoremap <Leader>ll 120\|
-
-    " Arrange args
-    nnoremap <silent><Leader>ab :call ArrangeArgs('(', ')')<cr>
-    nnoremap <silent><Leader>a( :call ArrangeArgs('(', ')')<cr>
-    nnoremap <silent><Leader>a[ :call ArrangeArgs('[', ']')<cr>
-    nnoremap <silent><Leader>a{ :call ArrangeArgs('{', '}')<cr>
-
-    " Quick list aliases
-    nnoremap <Leader>td :Ggrep TODO -- ':(exclude)vendor/'<cr>:copen<cr>
-    nnoremap <Leader>fm :Ggrep FIXME -- ':(exclude)vendor/'<cr>:copen<cr>
-
-    " Whitespace
-    nnoremap <Leader><CR> i<cr><esc>
-    nnoremap <Leader><BS> ^d0i<bs><esc>
-
-    " Search things
-    nnoremap <Leader>gg :Ggrep ''<Left>
 ]]
 

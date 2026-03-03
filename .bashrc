@@ -1,4 +1,3 @@
-
 [[ $- != *i* ]] && return
 
 # global import boringness
@@ -13,14 +12,14 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:/home/phpmatt/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/usr/local/lib"
+export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.cargo/env"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 export PATH="$PATH:$HOME/.local/sbin"
-
-
 export TERM=xterm-256color
 export EDITOR=nvim
 export TERMINAL=alacritty
@@ -39,5 +38,8 @@ export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 alias luamake=/home/phpmatt/Documents/github/dev-tools/lua-language-server/3rd/luamake/luamake
 
 source /usr/share/nvm/init-nvm.sh
+export GPG_TTY=$(tty)
+
+eval ssh-agent &> /dev/null
 
 eval "$(fzf --bash)"

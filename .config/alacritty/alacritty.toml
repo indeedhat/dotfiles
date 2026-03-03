@@ -1,5 +1,6 @@
 [font]
-size = 8.5
+size = 11
+offset.y = 1
 
 [font.bold]
 family = "Open Dyslexic MNerd Font Mono"
@@ -14,5 +15,10 @@ family = "Open Dyslexic MNerd Font Mono"
 style = "Medium"
 
 [window]
-opacity = 0.98
+opacity = 0.97
 dynamic_title = true
+
+[general]
+import = [
+    "base16-default-dark.toml"
+]

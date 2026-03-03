@@ -11,9 +11,13 @@ return {
         }
 
         local builtin = require('telescope.builtin')
+        local actions = require("telescope.actions")
+        local action_state = require("telescope.actions.state")
 
-        vim.keymap.set('n', '<C-t>', function() builtin.find_files({ hidden = true }) end, { noremap = true })
-        vim.keymap.set('n', '<C-Space>', function() 
+        vim.keymap.set('n', '<C-t>', function()
+            builtin.find_files({ hidden = true })
+        end, { noremap = true })
+        vim.keymap.set('n', '<C-Space>', function()
             builtin.buffers({
                 ignure_current_buffer = true,
                 sort_lastused = true,
@@ -24,5 +28,28 @@ return {
         vim.keymap.set('n', '<Leader>qq', builtin.quickfix, { noremap = true })
         vim.keymap.set('n', '<Leader>qh', builtin.quickfixhistory, { noremap = true })
         vim.keymap.set('n', '<Leader>gf', builtin.live_grep, { noremap = true })
+        vim.keymap.set('n', '<Leader>gg', builtin.live_grep, { noremap = true })
+
+
+        vim.keymap.set("n", "<leader>od", function()
+            require("telescope.builtin").find_files({
+                prompt_title = "Directories",
+                find_command = { "sh", "-c", "rg --files | xargs dirname | sort | uniq" },
+                previewer = false,
+                attach_mappings = function(prompt_bufnr, map)
+                    map("i", "<CR>", function()
+                        local entry = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
+                        vim.cmd("Oil --float " .. entry.path)
+                    end)
+                    map("n", "<CR>", function()
+                        local entry = action_state.get_selected_entry()
+                        actions.close(prompt_bufnr)
+                        vim.cmd("Oil --float " .. entry.path)
+                    end)
+                    return true
+                end,
+            })
+        end)
     end
 }

@@ -39,83 +39,76 @@ return {
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
+            'saghen/blink.cmp',
             'sago35/tinygo.vim',
         },
-        config = function()
-            vim.o.completeopt = 'menu,menuone,noselect'
-
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
-            local nvim_lsp = require 'lspconfig'
-            local servers = {
-                'clangd',
-                --'eslint',
+        opts = {
+            servers = {
+                'eslint',
                 'gopls',
                 'html',
-                -- 'julials',
-                -- 'lua_ls',
-                -- 'ocamllsp',
-                -- 'intelephense',
+                'julials',
+                'lua_ls',
+                'ocamllsp',
                 'phpactor',
-                -- 'pyright',
-                -- 'rust_analyzer',
-                -- 'solargraph',
+                'basedpyright',
+                'rust_analyzer',
+                'solargraph',
                 'svelte',
-                -- 'templ',
-                -- 'terraform_lsp',
-                -- 'terraformls',
+                'templ',
+                'terraform_lsp',
+                'terraformls',
                 'ts_ls',
-                'volar',
+                'vue_ls',
+                'vtsls',
+                'regols',
+                'ruby_lsp'
             }
-            for _, lsp in ipairs(servers) do
-                nvim_lsp[lsp].setup {
+        },
+        config = function(_, opts)
+            vim.o.completeopt = 'menu,menuone,noselect'
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+            for _, server in ipairs(opts.servers) do
+                vim.lsp.enable(server)
+                vim.lsp.config(server, {
                     on_attach = on_attach,
-                    capabilities = capabilities,
-                }
+                    capabilities = capabilities
+                })
             end
 
-            nvim_lsp['elixirls'].setup {
-                cmd = { "elixir-ls" },
-                on_attach = on_attach,
-                capabilities = capabilities,
-            }
-
-            local cmp = require('cmp')
-            cmp.setup {
-                snippet = {
-                    expand = function(args)
-                        vim.fn['vsnip#anonymous'](args.body)
-                    end,
-                },
-                mapping = {
-                    ['<C-p>'] = cmp.mapping.select_prev_item(),
-                    ['<C-n>'] = cmp.mapping.select_next_item(),
-                    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.close(),
-                    ['<CR>'] = cmp.mapping.confirm {
-                        select = true,
-                    },
-                },
-                sources = cmp.config.sources {
-                    { name = 'nvim_lsp' },
-                    { name = "vsnip" },
-                    { name = "buffer" },
-                    { name = "path" },
-                },
-                experimental = {
-                    ghost_text = true,
-                },
-
-                preselect = cmp.PreselectMode.None,
-            }
+            vim.lsp.config['regols'].root_dir = vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
         end
+    },
+    {
+        'saghen/blink.cmp',
+        -- optional: provides snippets for the snippet source
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        -- use a release tag to download pre-built binaries
+        version = '1.*',
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            keymap = { preset = 'enter' },
+            appearance = {
+                nerd_font_variant = 'mono'
+            },
+            completion = {
+                keyword = { range = 'full' },
+                ghost_text = { enabled = true },
+                documentation = { auto_show = true }
+            },
+            sources = {
+                default = { 'lsp', 'path', 'snippets' }, -- , 'buffer' },
+            },
+            signature = {
+                enabled = true,
+                window = {
+                    show_documentation = true,
+                    direction_priority = { 's', 'n' }
+                }
+            }
+        },
+        opts_extend = { "sources.default" }
     }
 }

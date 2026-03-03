@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pick=$(kubectl get deployment | cut -d ' ' -f 1 | fzf --header "Restart Deployment")
+if [ -z "${pick}" ]; then
+    exit 0
+fi
+
+kubectl rollout restart deployment ${pick}

@@ -7,18 +7,21 @@ vim.o.conceallevel = 0
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.winborder = 'rounded'
+
 vim.gvim_json_syntax_conceal = 0
 
 -- 
 vim.cmd [[
+    set termguicolors
     set mouse=
 
     set list
 
     highlight ColorLine ctermbg=16
     highlight ColorColumn ctermbg=16
-    "set cursorline
-    set colorcolumn=120,100
+    set cursorline
+    set colorcolumn=100,80
 
     filetype plugin indent on
     set tabstop=4
@@ -49,6 +52,21 @@ local highlight = {
 }
 
 return {
+    {
+        "binhtran432k/dracula.nvim",
+        name = "dracula",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            require("dracula").setup({
+                transparent_bg = true,
+                italic_comment = true,
+                overrides = {},
+            })
+            -- vim.cmd.colorscheme("dracula")
+        end
+    },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = 'ibl',
@@ -100,6 +118,19 @@ return {
         'markonm/traces.vim',
         config = function()
             vim.g.traces_num_range_preview = 1
+        end
+    },
+    {
+        'nvim-treesitter/nvim-treesitter-context',
+        config = function()
+            require'treesitter-context'.setup{
+                enable = true,
+                multiline_threshold = 3,
+            }
+
+            vim.keymap.set("n", "[c", function()
+                require("treesitter-context").go_to_context(vim.v.count1)
+            end, { silent = true })
         end
     }
 }

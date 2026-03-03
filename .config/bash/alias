@@ -5,11 +5,10 @@ alias vim="nvim"
 alias svim="sudo nvim"
 alias v=nvim
 
-alias k=kubectl
-
-# tmux things
+# tmux
 alias t=tmux
 alias sesh=tmux-sessionizer
+alias tkill=tmux-session-kill
 :qa() {
     if [ -n "$TMUX" ]; then
         tmux kill-session
@@ -17,9 +16,19 @@ alias sesh=tmux-sessionizer
         exit
     fi
 }
+ta()
+{
+    session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' 2>/dev/null | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
+    tmux attach -t ${session} 2> /dev/null || tmux
+}
 
 # dev things
 alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
+alias k=kubectl
+alias kex=kubectl-exec
+alias klog=kubectl-logs
+alias kpo=kubectl-port-forward
+alias kdr=kubectl-deployment-restart
 
 # File system
 alias ll="ls -alh --color"
@@ -34,6 +43,8 @@ alias :q="exit"
 # Better cli
 alias cat="bat -p"
 
+alias box="distrobox"
+
 # Github Release
 gh_release_patch()
 {
@@ -47,6 +58,7 @@ gh_release_major()
 {
     gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.0.0", $1 +1 }')
 }
+alias g=git
 
 gh_clone()
 {
@@ -65,9 +77,19 @@ cd() {
     builtin cd "$@" && automux 
 }
 
-kys()
+alias iwdfix="sudo systemctl restart iwd"
+
+json()
 {
-    kill $(pidof $1)
+    wl-paste | jq "$@"
 }
 
-alias iwdfix="sudo systemctl restart iwd"
+yaml()
+{
+    wl-paste | yq "$@"
+}
+
+jwt()
+{
+    wl-paste | jq -R 'split(".") | .[1] | @base64d | fromjson'
+}

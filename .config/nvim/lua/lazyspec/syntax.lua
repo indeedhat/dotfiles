@@ -5,12 +5,15 @@ return {
     {
         'mattn/emmet-vim',
         config = function()
-            vim.g.user_emmet_leader_key=','
-            vim.g.user_emmet_mode='n'
+            vim.g.user_emmet_leader_key = ','
+            vim.g.user_emmet_mode = 'n'
         end
     },
     {
-        'aeke/vim-php-cs-fixer'
+        'aeke/vim-php-cs-fixer',
+        config = function()
+            vim.g.php_cs_fixer_level = 'all'
+        end
     },
     {
         "iamcco/markdown-preview.nvim",
