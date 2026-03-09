@@ -9,3 +9,5 @@
 ".bashrc" => "/home/indeedhat/.bashrc"
 ".config/phpactor" => "/home/indeedhat/.config/phpactor"
 ".config/hyper" => "/home/indeedhat/.config/hypr"
+".config/gtk-3.0" => "/home/indeedhat/.config/gtk-3.0"
+".config/gtk-4.0" => "/home/indeedhat/.config/gtk-4.0"
