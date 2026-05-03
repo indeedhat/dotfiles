@@ -1,15 +1,9 @@
-[[ $- != *i* ]] && return
-
-# global import boringness
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
 
 source <(find -L ~/.config/bash -type f -exec cat {} +)
 
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:/home/phpmatt/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/usr/local/lib"
 export PATH="$PATH:/usr/local/bin"
@@ -25,21 +19,6 @@ export EDITOR=nvim
 export TERMINAL=alacritty
 export PAGER=most
 
-export CPATH=$CPATH:/usr/include/gtk-3.0
-
-export PATH="$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH"
-
-complete -C /home/phpmatt/go/bin/gocomplete go
-complete -C /home/phpmatt/go/bin/podctl podctl
-
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
-
-alias luamake=/home/phpmatt/Documents/github/dev-tools/lua-language-server/3rd/luamake/luamake
-
-source /usr/share/nvm/init-nvm.sh
 export GPG_TTY=$(tty)
-
-eval ssh-agent &> /dev/null
 
 eval "$(fzf --bash)"

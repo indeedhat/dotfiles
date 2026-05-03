@@ -1,0 +1,2 @@
+alias db_pass_dev="aws rds generate-db-auth-token --hostname platformservices-dev.cvakgcqa63oz.eu-central-2.rds.amazonaws.com --port 5432 --region eu-central-2  --username platform_sa  --profile hubexo-dev"
+alias db_pass_stage="aws rds generate-db-auth-token --hostname platformservices-staging.cdmuc42ga8dy.eu-north-1.rds.amazonaws.com --port 5432 --region eu-north-1  --username platform_sa  --profile hubexo-stage"

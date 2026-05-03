@@ -3,7 +3,7 @@
 --
 
 vim.cmd [[
-nnoremap <Leader>uu :exec 'normal a'.system('uuidgen \| head -c -1')<cr>
+nnoremap <Leader>uu :exec 'normal a'.system('uuidgen \| head -c 36')<cr>
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" "
 " Functions                                                                          sec-function "

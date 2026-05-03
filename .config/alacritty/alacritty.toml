@@ -3,16 +3,16 @@ size = 11
 offset.y = 1
 
 [font.bold]
-family = "Open Dyslexic MNerd Font Mono"
+family = "OpenDyslexicM Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "Open Dyslexic MNerd Font Mono"
+family = "OpenDyslexicM Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "Open Dyslexic MNerd Font Mono"
-style = "Medium"
+family = "OpenDyslexicM Nerd Font Mono"
+style = "Regular"
 
 [window]
 opacity = 0.97
@@ -22,3 +22,8 @@ dynamic_title = true
 import = [
     "base16-default-dark.toml"
 ]
+
+[[keyboard.bindings]]
+chars = "\u001c"
+key = "¥"
+mods = "Control"

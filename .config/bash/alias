@@ -93,3 +93,5 @@ jwt()
 {
     wl-paste | jq -R 'split(".") | .[1] | @base64d | fromjson'
 }
+
+alias glog="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"

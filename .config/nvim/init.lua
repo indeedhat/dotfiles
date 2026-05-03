@@ -1,6 +1,12 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+
+
 require("keymap")
 require("lazyconf")
 require("vimscript")
@@ -14,7 +20,7 @@ vim.opt.swapfile = false
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = { "en_gb" }
 
 vim.wo.wrap = false

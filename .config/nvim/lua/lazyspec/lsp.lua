@@ -27,7 +27,7 @@ local on_attach = function(_, bufnr)
 end
 
 vim.api.nvim_command[[autocmd BufWritePre *.go,*.php lua vim.lsp.buf.format()]]
-vim.api.nvim_command[[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]]
+-- vim.api.nvim_command[[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]]
 
 return {
     {
@@ -45,24 +45,24 @@ return {
         opts = {
             servers = {
                 'eslint',
-                'gopls',
+                --'gopls',
                 'html',
-                'julials',
-                'lua_ls',
-                'ocamllsp',
-                'phpactor',
-                'basedpyright',
-                'rust_analyzer',
-                'solargraph',
-                'svelte',
-                'templ',
-                'terraform_lsp',
-                'terraformls',
+                --'julials',
+                --'lua_ls',
+                --'ocamllsp',
+                --'phpactor',
+                --'basedpyright',
+                --'rust_analyzer',
+                --'solargraph',
+                --'svelte',
+                --'templ',
+                -- 'terraform_lsp',
+                -- 'terraformls',
                 'ts_ls',
-                'vue_ls',
-                'vtsls',
-                'regols',
-                'ruby_lsp'
+                --'vue_ls',
+                -- 'vtsls',
+                --'regols',
+                --'ruby_lsp'
             }
         },
         config = function(_, opts)
@@ -70,11 +70,11 @@ return {
             local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             for _, server in ipairs(opts.servers) do
-                vim.lsp.enable(server)
                 vim.lsp.config(server, {
                     on_attach = on_attach,
                     capabilities = capabilities
                 })
+                vim.lsp.enable(server)
             end
 
             vim.lsp.config['regols'].root_dir = vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
