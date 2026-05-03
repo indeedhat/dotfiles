@@ -20,6 +20,7 @@ export PATH="$PATH:$HOME/.cargo/env"
 export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
 export PATH="$PATH:$HOME/.local/sbin"
+export PATH="$PATH:$HOME/venv/nrfutil/bin"
 export TERM=xterm-256color
 export EDITOR=nvim
 export TERMINAL=alacritty
