@@ -65,6 +65,7 @@ return {
                 'regols',
                 'ruby_lsp',
                 'clangd',
+                'csharp_ls'
             }
         },
         config = function(_, opts)

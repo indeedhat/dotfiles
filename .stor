@@ -11,3 +11,4 @@
 ".config/hyper" => "/home/indeedhat/.config/hypr"
 ".config/gtk-3.0" => "/home/indeedhat/.config/gtk-3.0"
 ".config/gtk-4.0" => "/home/indeedhat/.config/gtk-4.0"
+".local/sbin/grimblast" => "/home/indeedhat/.local/sbin/grimblast"
