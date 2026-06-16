@@ -45,7 +45,7 @@ return {
         opts = {
             servers = {
                 'eslint',
-                --'gopls',
+                'gopls',
                 'html',
                 --'julials',
                 --'lua_ls',
@@ -59,6 +59,7 @@ return {
                 -- 'terraform_lsp',
                 -- 'terraformls',
                 'ts_ls',
+                'csharp_ls',
                 --'vue_ls',
                 -- 'vtsls',
                 --'regols',

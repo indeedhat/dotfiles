@@ -2,3 +2,5 @@
 ".config/nvim" => "/Users/holmesma/.config/nvim"
 ".config/bash" => "/Users/holmesma/.config/bash"
 ".config/alacritty" => "/Users/holmesma/.config/alacritty"
+".aerospace.toml" => "/Users/holmesma/.aerospace.toml"
+".local/sbin" => "/Users/holmesma/.local/sbin"

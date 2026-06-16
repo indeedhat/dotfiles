@@ -10,6 +10,10 @@ return {
             }
         }
 
+        require("telescope.builtin").treesitter({
+            ignore_symbols = {"var", "import"}
+        })
+
         local builtin = require('telescope.builtin')
         local actions = require("telescope.actions")
         local action_state = require("telescope.actions.state")
@@ -29,6 +33,7 @@ return {
         vim.keymap.set('n', '<Leader>qh', builtin.quickfixhistory, { noremap = true })
         vim.keymap.set('n', '<Leader>gf', builtin.live_grep, { noremap = true })
         vim.keymap.set('n', '<Leader>gg', builtin.live_grep, { noremap = true })
+        vim.keymap.set('n', '<Leader>ts', builtin.treesitter, { noremap = true })
 
 
         vim.keymap.set("n", "<leader>od", function()

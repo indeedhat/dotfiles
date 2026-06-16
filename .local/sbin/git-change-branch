@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pick=$(git branch | grep -v '*' | fzf --header "Change Git Branch")
+if [ -z "${pick}" ]; then
+    exit 0
+fi
+
+git checkout "${pick}"

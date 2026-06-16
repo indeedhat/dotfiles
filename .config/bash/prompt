@@ -5,7 +5,7 @@ echo -e ' _/ // / / / /_/ /  __/  __/ /_/ / / / / /_/ / /_'
 echo -e '/___/_/ /_/\__,_/\___/\___/\__,_/_/ /_/\__,_/\__/'
 
 _ps_git_branch() {
-    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    branch=$(git status 2> /dev/null | grep 'On branch' | sed -E 's/^On branch (.*)$/\1/')
     if [ -z "${branch}" ]; then
         echo ''
         return 0

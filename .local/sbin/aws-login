@@ -1,0 +1,14 @@
+#!/bin/bash
+export TERM=xterm-256color
+
+selected=$(
+    echo -e "Development dev\nStaging stage" \
+        | awk '{ printf "\033[1;32m%s\033[0m\t%s\n", $1, $2 }' \
+        | column -t -s $'\t'  \
+        | fzf --scheme=path --ansi --tiebreak=pathname,length  --delimiter=$' '  --accept-nth=-1 -q "${1}" \
+)
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+aws sso login --profile "hubexo-${selected}"

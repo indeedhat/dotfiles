@@ -46,19 +46,8 @@ alias cat="bat -p"
 alias box="distrobox"
 
 # Github Release
-gh_release_patch()
-{
-    gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.%d.%d", $1, $2, $3 +1 }')
-}
-gh_release_minor()
-{
-    gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.%d.0", $1, $2 +1 }')
-}
-gh_release_major()
-{
-    gh release create $(gh release view | sed -n '2p' | awk '{ print $2 }' | awk -F. '{ printf "%d.0.0", $1 +1 }')
-}
 alias g=git
+alias gbranch="git-change-branch"
 
 gh_clone()
 {
@@ -70,8 +59,6 @@ gh_clone()
     fi
 }
 
-alias ghrp=gh_release_patch
-alias ghrm=gh_release_minor
 
 cd() {
     builtin cd "$@" && automux 
