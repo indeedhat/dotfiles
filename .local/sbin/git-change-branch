@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pick=$(git branch | grep -v '*' | fzf --header "Change Git Branch")
+pick=$(git branch | grep -v '*' | fzf --header "Change Git Branch" | awk '{$1=$1;print}')
 if [ -z "${pick}" ]; then
     exit 0
 fi

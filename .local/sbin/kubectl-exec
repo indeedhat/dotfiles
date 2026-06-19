@@ -4,4 +4,4 @@ if [ -z "${pick}" ]; then
     exit 0
 fi
 
-kubectl exec -it ${pick} -- bash
+kubectl exec -it ${pick} -- sh

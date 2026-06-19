@@ -29,6 +29,7 @@ alias kex=kubectl-exec
 alias klog=kubectl-logs
 alias kpo=kubectl-port-forward
 alias kdr=kubectl-deployment-restart
+alias kcon=kubectl-context-switch
 
 # File system
 alias ll="ls -alh --color"
