@@ -1,5 +1,10 @@
-#!/bin/bash
-pick=$(kubectl get pod | grep Running | cut -d ' ' -f 1 | fzf --header "Attach Pod (bash)")
+#!/usr/bin/env bash
+
+pick=$(kubectl get pod \
+    | grep Running \
+    | cut -d ' ' -f 1 \
+    | fzf --header "Attach Pod (bash)"\
+)
 if [ -z "${pick}" ]; then
     exit 0
 fi

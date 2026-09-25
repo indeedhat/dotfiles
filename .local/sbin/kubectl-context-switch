@@ -1,6 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-pick=$(kubectl config get-contexts | tail -n +2 | awk '{ print ($1 == "*") ? $2 : $1 }' | fzf --header "Switch K8s Context")
+pick=$(kubectl config get-contexts \
+    | tail -n +2 \
+    | awk '{ print ($1 == "*") ? $2 : $1 }' \
+    | fzf --header "Switch K8s Context" \
+)
 if [ -z "${pick}" ]; then
     exit 0
 fi

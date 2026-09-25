@@ -1,3 +1,11 @@
 alias db_pass_dev="aws rds generate-db-auth-token --hostname platformservices-dev.cvakgcqa63oz.eu-central-2.rds.amazonaws.com --port 5432 --region eu-central-2  --username platform_sa  --profile hubexo-dev"
+alias db_pass_dev_subscription="aws rds generate-db-auth-token --hostname platformservices-dev.cvakgcqa63oz.eu-central-2.rds.amazonaws.com --port 5432 --region eu-central-2  --username subscription_sa  --profile hubexo-dev"
+
 alias db_pass_stage="aws rds generate-db-auth-token --hostname platformservices-staging.cdmuc42ga8dy.eu-north-1.rds.amazonaws.com --port 5432 --region eu-north-1  --username platform_sa  --profile hubexo-stage"
 alias db_pass_stage_subscription="aws rds generate-db-auth-token --hostname platformservices-staging.cdmuc42ga8dy.eu-north-1.rds.amazonaws.com --port 5432 --region eu-north-1  --username subscription_sa  --profile hubexo-stage"
+
+alias db_pass_prod="aws rds generate-db-auth-token --hostname platformservices-prod.cl8m660caipz.eu-north-1.rds.amazonaws.com --port 5432 --region eu-north-1  --username platform_sa  --profile hubexo-prod"
+alias db_pass_prod_subscription="aws rds generate-db-auth-token --hostname platformservices-prod.cl8m660caipz.eu-north-1.rds.amazonaws.com --port 5432 --region eu-north-1  --username subscription_sa  --profile hubexo-prod"
+
+alias valkey_pass_dev="/Users/holmesma/projects/fuckery/valkey-pass/valkey-pass -cache platformservices-dev -user platformservices-oauth-dev -region eu-central-2 -serverless --profile hubexo-dev"
+alias valkey_connect_dev="valkey-cli -h master.platformservices-dev.tnmbif.euc2.cache.amazonaws.com -p 6379 --tls --user platformservices-oauth-dev --askpass"

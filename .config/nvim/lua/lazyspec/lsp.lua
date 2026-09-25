@@ -78,6 +78,15 @@ return {
                 vim.lsp.enable(server)
             end
 
+            -- auto-imports as baseUrl-relative paths (src/entities/foo) instead of ./foo
+            vim.lsp.config('ts_ls', {
+                init_options = {
+                    preferences = {
+                        importModuleSpecifierPreference = 'non-relative',
+                    },
+                },
+            })
+
             vim.lsp.config['regols'].root_dir = vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
         end
     },
