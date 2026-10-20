@@ -57,7 +57,7 @@ return {
                 --'svelte',
                 --'templ',
                 -- 'terraform_lsp',
-                -- 'terraformls',
+                'terraformls',
                 'ts_ls',
                 'csharp_ls',
                 --'vue_ls',

@@ -59,12 +59,12 @@ return {
         priority = 1000,
         opts = {},
         config = function()
-            require("dracula").setup({
-                transparent_bg = true,
-                italic_comment = true,
-                overrides = {},
-            })
-            vim.cmd.colorscheme("dracula-soft")
+            -- require("dracula").setup({
+            --     transparent_bg = true,
+            --     italic_comment = true,
+            --     overrides = {},
+            -- })
+            -- vim.cmd.colorscheme("dracula-soft")
         end
     },
     {
@@ -83,6 +83,12 @@ return {
     },
     {
         'itchyny/lightline.vim'
+    },
+    {
+        'rebelot/kanagawa.nvim',
+        config = function()
+            vim.cmd.colorscheme('kanagawa-dragon')
+        end
     },
     {
         'jeffkreeftmeijer/vim-dim',
