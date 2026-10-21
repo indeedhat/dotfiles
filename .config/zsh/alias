@@ -1,0 +1,75 @@
+# Neovim
+alias nano="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias svim="sudo nvim"
+alias v=nvim
+
+# tmux
+alias t=tmux
+alias sesh=tmux-sessionizer
+alias tkill=tmux-session-kill
+:qa() {
+    if [[ -n "$TMUX" ]]; then
+        tmux kill-session
+    else
+        exit
+    fi
+}
+ta() {
+    local session=$(tmux ls -F '#{session_name}|#{?session_attached,attached,not attached}' 2>/dev/null | grep 'not attached$' | tail -n 1 | cut -d '|' -f1)
+    tmux attach -t "${session}" 2> /dev/null || tmux
+}
+
+# dev things
+alias xdebug="XDEBUG_CONFIG='profiler_enable=1' php"
+alias k=kubectl
+alias kex=kubectl-exec
+alias klog=kubectl-logs
+alias kpo=kubectl-port-forward
+alias kdr=kubectl-deployment-restart
+alias kcon=kubectl-context-switch
+
+# File system
+alias ll="ls -alhG"
+alias du="du -h"
+alias df="df -h"
+
+# matt is dumb
+alias :q="exit"
+
+# Better cli
+(( $+commands[bat] )) && alias cat="bat -p"
+
+alias box="distrobox"
+
+# Github Release
+alias g=git
+alias gbranch="git-change-branch"
+
+gh_clone() {
+    cd ~/projects
+    git clone git@github.com:$1
+    if [[ $? -eq 1 ]]; then
+        cd ${1##*/}
+        nvim
+    fi
+}
+
+cd() {
+    builtin cd "$@" && { (( $+commands[automux] )) && automux; true }
+}
+
+json() {
+    pbpaste | jq "$@"
+}
+
+yaml() {
+    pbpaste | yq "$@"
+}
+
+jwt() {
+    pbpaste | jq -R 'split(".") | .[1] | @base64d | fromjson'
+}
+
+alias glog="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
