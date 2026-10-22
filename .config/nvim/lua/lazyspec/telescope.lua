@@ -23,7 +23,7 @@ return {
         end, { noremap = true })
         vim.keymap.set('n', '<C-Space>', function()
             builtin.buffers({
-                ignure_current_buffer = true,
+                ignore_current_buffer = true,
                 sort_lastused = true,
                 sort_mru = true
             })
